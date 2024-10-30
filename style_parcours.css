@@ -1,0 +1,258 @@
+@import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css');
+
+*{
+	padding: 0;
+	margin: 0;
+	font-family: 'Josefin Sans', sans-serif;
+	box-sizing: border-box;
+	--principal: #ffd79d;
+	--secondaire: #d902ee;
+	--tertiaire:#f162ff;
+	--pastel:#fcfc;
+}
+
+span{
+	color: var(--principal);
+}
+
+/*Page d'ouverture*/
+
+.intro{
+	height: 100vh;
+	width: 100%;
+	background-image: url(img/parcours.jpg);
+	background-size: cover;
+	background-position: center;
+}
+
+/*Barre de navigation*/
+
+.logo{
+	height: auto;
+	width: 80px;
+}
+
+nav{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-top: 45px;
+	padding-left: 8%;
+	padding-right: 8%;
+}
+
+nav ul li{
+	list-style-type: none;
+	display: inline-block;
+	padding: 10px  35px;
+}
+nav ul li a{
+	color: white;
+	text-decoration: none;
+	font-weight: bold;
+	text-transform: capitalize;
+	font-size: 110%
+}
+nav ul li a:hover{
+	color: var(--principal);
+	transition: .4s;
+}
+
+/*Boutton langue*/
+
+.btn{
+	background-color:var(--principal);
+	color: white;
+	text-decoration: none;
+	border: 2px solid transparent;
+	font-weight: bold;
+	padding: 10px 25px;
+	border-radius: 30px;
+	transition: transform .4s; 
+}
+.btn:hover{
+	transform: scale(1.2);
+}
+
+/*Titre + sous-titre*/
+
+.titre{
+	position: absolute;
+	top: 55%;
+	left:8%;
+	transform: translateY(-50%);
+}
+
+.titre p{
+	color: white;
+	  margin: 10px 0px 20px;
+	  font-size: 15px;
+	text-align: right;
+  }
+
+/*Principal, Moi en quelque mots*/
+
+h1{
+	color: white;
+	margin: 20px 0px 20px;
+	font-size: 50px;
+}
+h3{
+	color: white;
+	font-size: 20px;
+	margin-bottom: 35px;
+}
+.moi{
+	width: 100%;
+	padding: 100px 0px;
+	background-color: #191919;
+}
+.main{
+	width: 1130px;
+	max-width: 95%;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+/*Pied de page*/
+
+footer{
+	position: relative;
+	width: 100%;
+	background: #101010;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.end{
+	position: absolute;
+	color:var(--principal);
+	bottom: 15px;
+	font-size: 14px; 
+}
+
+/*------------------Frise----------------------*/
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 17px;
+  background-color: #eee;
+  overflow-x: hidden;
+}
+
+.timeline {
+  position: relative;
+  width: 100%;
+}
+
+/* Ligne de la frise */
+.timeline::before {
+  content: '';
+  background: var(--tertiaire);
+  width: 5px;
+  height: 100%;
+  position: absolute;
+  left: 50%; /* Ligne centrée en mode paysage */
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  position: relative;
+  width: 100%;
+  margin-bottom: 70px;
+}
+
+.timeline-img {
+  background: var(--principal);
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  right: calc(50% + 5px); /* Aligner avec la ligne */
+  margin-top: 25px;
+}
+
+.timeline-content {
+  background: var(--principal);
+  border-radius: 4px;
+  box-shadow: 0 20px 25px -15px rgba(0, 0, 0, 0.3);
+  padding: 10px 30px;
+  position: relative;
+  width: 45%; /* Réduit pour équilibrer les cartes */
+  opacity: 1;
+  transition: opacity 0.8s ease-in-out;
+}
+
+/* Cartes à droite ou à gauche selon leur position dans la liste */
+.timeline-item:nth-child(odd) .timeline-content {
+  left: 52%; /* Cartes à droite */
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+  right: 0%; /* Cartes à gauche */
+}
+
+.timeline-img-header {
+  background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0, .4)), center center no-repeat;
+  background-size: cover;
+  height: 200px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.timeline-img-header h2 {
+  color: #ffffff;
+  position: absolute;
+  bottom: 5px;
+  left: 20px;
+}
+
+.timeline-img-header img {
+  width: 100%;
+  height: 100%;
+}
+
+.date {
+  background: black;
+  color: #ffffff;
+  display: inline-block;
+  padding: 10px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/* Effet fade-out lorsque l'élément sort du champ de vision */
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+
+/* Adaptation pour mobile : Ligne à droite et cartes à gauche */
+@media screen and (max-width: 850px) {
+  .timeline::before {
+    left: 91%; /* Ligne déplacée à droite en mode mobile */
+    transform: none;
+  }
+
+  .timeline-content {
+    width: 70%;
+    margin-left: 20px;
+  }
+  
+  /* Cartes à droite ou à gauche selon leur position dans la liste */
+  .timeline-item:nth-child(odd) .timeline-content {
+    left: 10%; /* Cartes à droite */
+  }
+
+  .timeline-item:nth-child(even) .timeline-content {
+    right: -10%; /* Cartes à gauche */
+  }
+
+  .timeline-img {
+    left: calc(91%); /* Image de connexion alignée avec la ligne à droite */
+  }
+}
