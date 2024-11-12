@@ -246,3 +246,11 @@ footer{
 	bottom: 15px;
 	font-size: 14px; 
 }
+
+/*Responsive*/
+
+@media (max-width: 767px) {
+	.box{
+		display: absolute;
+	}
+}
