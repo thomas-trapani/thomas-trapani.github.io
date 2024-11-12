@@ -286,6 +286,8 @@ button:hover {
     
 	.titre{
 		padding-top: 120px;
+		padding-left: 10px;
+		padding-right: 10px;
 	}
 
 	.main {
