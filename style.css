@@ -251,6 +251,6 @@ footer{
 
 @media (max-width: 767px) {
 	.box{
-		display: absolute;
+		display: inline-block;
 	}
 }
