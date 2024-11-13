@@ -82,127 +82,6 @@ nav ul li a:hover{
 
 /*Titre + sous-titre*/
 
-/* Configuration "après" (pour les petits écrans) */
-@media (max-width: 767px) {
-    .titre {
-        position: static;
-        text-align: center;
-        transform: none;
-        margin-bottom: 20px;
-    }
-    .titre p {
-        font-size: 13px;
-        text-align: center;
-    }
-
-    h1 {
-        font-size: 30px;
-        text-align: center;
-    }
-
-    h3 {
-        font-size: 18px;
-        text-align: center;
-    }
-
-    .main {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .moi img {
-        width: 100%;
-        padding-right: 0;
-        margin-bottom: 20px;
-    }
-
-    .moi-text {
-        width: 100%;
-        text-align: justify;
-        padding: 0 20px;
-    }
-
-    .moi-text h2 {
-        font-size: 40px;
-    }
-
-    .moi-text h5 {
-        font-size: 18px;
-    }
-
-    .moi-text p {
-        font-size: 16px;
-        line-height: 24px;
-    }
-
-    button {
-        width: 100%;
-        padding: 10px 0;
-        font-size: 16px;
-    }
-}
-
-/* Configuration "avant" (pour les grands écrans) */
-@media (min-width: 768px) {
-    .titre {
-        position: absolute;
-        top: 55%;
-        left: 8%;
-        transform: translateY(-50%);
-    }
-
-    .titre p {
-        font-size: 15px;
-        text-align: right;
-    }
-
-    h1 {
-        font-size: 50px;
-    }
-
-    h3 {
-        font-size: 20px;
-    }
-
-    .main {
-        width: 1130px;
-        max-width: 95%;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-around;
-    }
-
-    .moi img {
-        width: 430px;
-        padding-right: 40px;
-    }
-
-    .moi-text {
-        width: 550px;
-    }
-
-    .moi-text h2 {
-        font-size: 60px;
-    }
-
-    .moi-text h5 {
-        font-size: 22px;
-    }
-
-    .moi-text p {
-        font-size: 18px;
-        line-height: 28px;
-    }
-
-    button {
-        width: auto;
-        padding: 13px 30px;
-        font-size: 18px;
-    }
-}
-
 .titre p{
 	color: white;
 	  margin: 10px 0px 20px;
@@ -279,119 +158,6 @@ button:hover {
 	background-color: transparent;
 	border: 2px solid var(--secondaire);
 	cursor: pointer;
-}
-
-/* Configuration pour les petits écrans */
-@media (max-width: 767px) {
-
-	.nav {
-		padding-left: 10px;
-		padding-right: 10px;
-	}
-	
-	.titre {
-		padding-top: 120px;
-		padding-left: 10px;
-		padding-right: 10px;
-	}
-
-	.main {
-        width: 100%;
-        padding: 0 20px;
-    }
-
-    .main h2 {
-        font-size: 40px;
-    }
-
-    .main h5 {
-        font-size: 18px;
-    }
-
-    .moi {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .moi img {
-        width: 100%;
-        padding-right: 0;
-        margin-bottom: 20px;
-    }
-
-    .moi-text {
-        width: 100%;
-        padding: 0 20px;
-    }
-
-    .moi-text h2 {
-        font-size: 40px;
-    }
-
-    .moi-text h5 {
-        font-size: 18px;
-    }
-
-    .moi-text p {
-        font-size: 16px;
-        line-height: 24px;
-    }
-
-    button {
-        width: 100%;
-        padding: 10px 0;
-        font-size: 16px;
-    }
-}
-
-/* Configuration pour les grands écrans */
-
-@media (min-width: 768px) {
-    .main {
-        width: 1130px;
-        max-width: 95%;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-around;
-    }
-
-    h1 {
-        font-size: 50px;
-    }
-
-    h3 {
-        font-size: 20px;
-    }
-
-    .moi img {
-        width: 430px;
-        padding-right: 40px;
-    }
-
-    .moi-text {
-        width: 550px;
-    }
-
-    .moi-text h2 {
-        font-size: 60px;
-    }
-
-    .moi-text h5 {
-        font-size: 22px;
-    }
-
-    .moi-text p {
-        font-size: 18px;
-        line-height: 28px;
-    }
-
-    button {
-        width: auto;
-        padding: 13px 30px;
-        font-size: 18px;
-    }
 }
 
 /*Accès aux pages*/
@@ -474,18 +240,172 @@ footer{
 	font-size: 14px; 
 }
 
-/* Configuration "après" (cartes verticales et centrées), pour les petits écrans */
+/* Configuration pour les petits écrans */
 @media (max-width: 767px) {
-    .box {
+	
+	/*Page de base*/
+
+	.nav {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	.titre{
+		padding-top: 120px;
+		padding-left: 10px;
+		padding-right: 10px;
+		position: static;
+        text-align: center;
+        transform: none;
+        margin-bottom: 20px;
+    }
+    .titre p {
+        font-size: 13px;
+        text-align: center;
+    }
+
+	h1 {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    h3 {
+        font-size: 18px;
+        text-align: center;
+    }
+
+	.main {
+        width: 100%;
+        padding: 0 20px;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .main h2 {
+        font-size: 40px;
+    }
+
+    .main h5 {
+        font-size: 18px;
+    }
+
+	/*A propos de moi*/
+
+    .moi {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .moi img {
+        width: 100%;
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .moi-text {
+        width: 100%;
+        padding: 0 20px;
+        text-align: justify;
+    }
+
+    .moi-text h2 {
+        font-size: 40px;
+    }
+
+    .moi-text h5 {
+        font-size: 18px;
+    }
+
+    .moi-text p {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px 0;
+        font-size: 16px;
+    }
+
+	/*Cartes à la fin*/
+
+	.box {
         flex-direction: column; /* Aligne les cartes en colonne */
         justify-content: center;
         align-items: center;
     }
 }
 
-/* Configuration "avant" (cartes alignées horizontalement), pour les grands écrans */
+/* Configuration pour les grands écrans */
+
 @media (min-width: 768px) {
-    .box {
+
+	/*Page de base*/
+
+	.titre {
+        position: absolute;
+        top: 55%;
+        left: 8%;
+        transform: translateY(-50%);
+    }
+
+    .titre p {
+        font-size: 15px;
+        text-align: right;
+    }
+
+    .main {
+        width: 1130px;
+        max-width: 95%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    h1 {
+        font-size: 50px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+	/*A propos de moi*/
+
+    .moi img {
+        width: 430px;
+        padding-right: 40px;
+    }
+
+    .moi-text {
+        width: 550px;
+    }
+
+    .moi-text h2 {
+        font-size: 60px;
+    }
+
+    .moi-text h5 {
+        font-size: 22px;
+    }
+
+    .moi-text p {
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    button {
+        width: auto;
+        padding: 13px 30px;
+        font-size: 18px;
+    }
+
+	/*Cartes à la fin de la page*/
+
+	.box {
         flex-direction: row; /* Aligne les cartes en ligne */
         justify-content: center;
         align-items: center;
