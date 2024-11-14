@@ -3,20 +3,6 @@
           box-sizing: border-box;
 }
 
-*{
-	padding: 0;
-	margin: 0;
-	font-family: 'Josefin Sans', sans-serif;
-	box-sizing: border-box;
-	--principal: #ffd79d;
-	--secondaire: #d902ee;
-	--tertiaire:#f162ff;
-	--pastel:#fcfc;
-}
-span{
-  color: var(--principal);
-}
-
 body{
   background-color: #101010;
   top: 20px;
@@ -25,119 +11,11 @@ body{
 /*Page d'ouverture*/
 
 .intro{
-	height: 100vh;
-	width: 100%;
 	background-image: url(img/skill.jpg);
-	background-size: cover;
-	background-position: center;
-}
-
-.wip{
-	height: 100vh;
-	width: 100%;
-	background-image: url(img/wip.jpg);
-	background-size: cover;
-	background-position: center;
-}
-
-.logo{
-	height: auto;
-	width: 80px;
-}
-
-/*Barre de navigation*/
-
-nav{
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding-top: 45px;
-	padding-left: 8%;
-	padding-right: 8%;
-}
-
-nav ul li{
-	list-style-type: none;
-	display: inline-block;
-	padding: 10px  35px;
-}
-nav ul li a{
-	color: white;
-	text-decoration: none;
-	font-weight: bold;
-	text-transform: capitalize;
-	font-size: 110%
-}
-nav ul li a:hover{
-	color: var(--principal);
-	transition: .4s;
-}
-
-/*Boutton langue*/
-
-.btn{
-	background-color:var(--principal);
-	color: white;
-	text-decoration: none;
-	border: 2px solid transparent;
-	font-weight: bold;
-	padding: 10px 25px;
-	border-radius: 30px;
-	transition: transform .4s; 
-}
-.btn:hover{
-	transform: scale(1.2);
-}
-
-/*Titre + sous-titre*/
-
-.titre{
-	position: absolute;
-	top: 55%;
-	left:8%;
-	transform: translateY(-50%);
-}
-
-/*Principal, Moi en quelque mots*/
-
-.titre p{
-  color: white;
-	margin: 10px 0px 20px;
-	font-size: 15px;
-  text-align: right;
-}
-
-h1{
-	color: white;
-	margin: 20px 0px 20px;
-	font-size: 50px;
-}
-h3{
-	color: white;
-	font-size: 20px;
-	margin-bottom: 35px;
 }
 
 h4{
   color:#101010;
-}
-
-/*Pied de page*/
-
-footer{
-	position: relative;
-	width: 100%;
-	background: #101010;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-}
-.end{
-	position: absolute;
-	color:var(--principal);
-	bottom: 15px;
-	font-size: 14px; 
 }
 
 .wrapper{
