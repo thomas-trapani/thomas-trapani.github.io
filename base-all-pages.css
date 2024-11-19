@@ -53,11 +53,6 @@ nav ul li a:hover{
 	transition: .4s;
 }
 
-/* Masque le lien Accueil par défaut */
-.accueil-link {
-	display: none;
-}
-
 /*Boutton langue*/
 
 .btn{
