@@ -51,65 +51,84 @@
 <!-- Liste d'actions -->  
   <div id="actionLog"></div>
   <script>
-	  let gamepadIndex;
-	  const actionLogDiv = document.getElementById('actionLog');
-	  const buttonCooldowns = {}; // Gérer le délai pour chaque bouton
-
-	  // Fonction pour afficher les actions sous forme d'image dans le log
-	  function logActionImage(buttonIndex) {
-		  const img = document.createElement('img');
-		  img.src = `${buttonIndex}.png`;  // Charger l'image avec l'index du bouton
-		  img.alt = `${buttonIndex}`;
-		  img.className = "actionImage";
-		  actionLogDiv.appendChild(img);
-		  actionLogDiv.scrollTop = actionLogDiv.scrollHeight; // Scroll auto vers le bas
+	let gamepadIndex;
+	const actionLogDiv = document.getElementById('actionLog');
+	const buttonCooldowns = {}; // Gérer le délai pour chaque bouton
+	const recentCommands = []; // Liste pour stocker les 5 dernières commandes
+	const secretSequence = [0, 1, 3, 2, 13]; // Code secret : A (0), B (1), Y (3), X (2), Bas (13)
+  
+	// Fonction pour afficher les actions sous forme d'image dans le log
+	function logActionImage(buttonIndex) {
+	  const img = document.createElement('img');
+	  img.src = `${buttonIndex}.png`; // Charger l'image avec l'index du bouton
+	  img.alt = `Button ${buttonIndex}`;
+	  img.className = "actionImage";
+	  actionLogDiv.appendChild(img);
+	  actionLogDiv.scrollTop = actionLogDiv.scrollHeight; // Scroll auto vers le bas
+	}
+  
+	// Fonction pour mettre à jour la liste des 5 dernières commandes
+	function updateRecentCommands(buttonIndex) {
+	  if (recentCommands.length >= 5) {
+		recentCommands.shift(); // Supprimer la commande la plus ancienne si on dépasse 5
 	  }
+	  recentCommands.push(buttonIndex);
 
-	  // Fonction pour vérifier si une manette est connectée
-	  window.addEventListener("gamepadconnected", (event) => {
-		  gamepadIndex = event.gamepad.index;
-	  });
-
-	  // Fonction pour vérifier si une manette est déconnectée
-	  window.addEventListener("gamepaddisconnected", (event) => {
-		  gamepadIndex = null;
-	  });
-
-	  // Fonction pour gérer le délai de 0.5 seconde entre deux appuis sur le même bouton
-	  function canPressButton(index) {
-		  const currentTime = Date.now();
-		  if (!buttonCooldowns[index] || currentTime - buttonCooldowns[index] >= 200) { // 200ms = 0.2s
-			  buttonCooldowns[index] = currentTime;
-			  return true;
-		  }
-		  return false;
+	  // Vérifier si la séquence correspond au code secret
+	  if (recentCommands.join() === secretSequence.join()) {
+		displaySecretMessage(); // Appeler la fonction pour afficher le message
 	  }
-
-	  // Fonction pour récupérer l'état des boutons et axes
-	  function updateGamepadStatus() {
-		  if (gamepadIndex !== null && gamepadIndex !== undefined) {
-			  const gamepad = navigator.getGamepads()[gamepadIndex];
-
-			  if (gamepad) {
-				  // Récupérer l'état des boutons pressés
-				  gamepad.buttons.forEach((button, index) => {
-					  if (button.pressed && canPressButton(index)) {
-						  logActionImage(index);  // Afficher l'image correspondant à l'index du bouton
-					  }
-				  });
-
-				  // Récupérer les mouvements des sticks analogiques (optionnel selon besoin)
-				  // const [leftStickX, leftStickY, rightStickX, rightStickY] = gamepad.axes;
-			  }
-		  }
-
-		  // Appel de cette fonction à chaque frame pour mettre à jour l'état de la manette
-		  requestAnimationFrame(updateGamepadStatus);
+	}
+  
+	// Fonction pour afficher un message spécial
+	function displaySecretMessage() {
+		const pdfPath = './doc.pdf'; // Chemin relatif vers le fichier PDF
+		window.open(pdfPath, '_blank'); // Ouvre le PDF dans un nouvel onglet
+	}
+  
+	// Fonction pour vérifier si une manette est connectée
+	window.addEventListener("gamepadconnected", (event) => {
+	  gamepadIndex = event.gamepad.index;
+	});
+  
+	// Fonction pour vérifier si une manette est déconnectée
+	window.addEventListener("gamepaddisconnected", (event) => {
+	  gamepadIndex = null;
+	});
+  
+	// Fonction pour gérer le délai de 0.2 seconde entre deux appuis sur le même bouton
+	function canPressButton(index) {
+	  const currentTime = Date.now();
+	  if (!buttonCooldowns[index] || currentTime - buttonCooldowns[index] >= 200) { // 200ms = 0.2s
+		buttonCooldowns[index] = currentTime;
+		return true;
 	  }
-
-	  // Démarrage de la mise à jour de l'état de la manette
-	  updateGamepadStatus();
-  </script>
+	  return false;
+	}
+  
+	// Fonction pour récupérer l'état des boutons et axes
+	function updateGamepadStatus() {
+	  if (gamepadIndex !== null && gamepadIndex !== undefined) {
+		const gamepad = navigator.getGamepads()[gamepadIndex];
+  
+		if (gamepad) {
+		  // Récupérer l'état des boutons pressés
+		  gamepad.buttons.forEach((button, index) => {
+			if (button.pressed && canPressButton(index)) {
+			  logActionImage(index); // Afficher l'image correspondant à l'index du bouton
+			  updateRecentCommands(index); // Mettre à jour la liste des commandes
+			}
+		  });
+		}
+	  }
+  
+	  // Appel de cette fonction à chaque frame pour mettre à jour l'état de la manette
+	  requestAnimationFrame(updateGamepadStatus);
+	}
+  
+	// Démarrage de la mise à jour de l'état de la manette
+	updateGamepadStatus();
+</script>
   	<!------Pied de page--------->
 	<footer>
 		<p class="end">© Thomas Trapani ©</p>
