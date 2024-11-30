@@ -25,7 +25,6 @@
   background-color: black; /* Couleur de fond noire */
   color: white; /* Texte en blanc */
   text-align: center; /* Texte centré */
-  padding: 10px 0; /* Espacement intérieur */
   position: fixed; /* Fixé en haut de la page */
   top: 0; /* Positionné en haut */
   z-index: 1000; /* Toujours au-dessus des autres éléments */
