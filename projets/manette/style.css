@@ -19,6 +19,21 @@
   height: 50px;
 }
 
+/*Bandeau nav*/
+.bandeau-noir {
+  width: 100%; /* Prend toute la largeur */
+  background-color: black; /* Couleur de fond noire */
+  color: white; /* Texte en blanc */
+  text-align: center; /* Texte centré */
+  padding: 10px 0; /* Espacement intérieur */
+  position: fixed; /* Fixé en haut de la page */
+  top: 0; /* Positionné en haut */
+  z-index: 1000; /* Toujours au-dessus des autres éléments */
+  font-size: 16px; /* Taille de la police */
+  font-family: 'Arial', sans-serif; /* Police de caractères */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5); /* Légère ombre portée */
+}
+
 /*Manette en elle même*/
 
 body {
