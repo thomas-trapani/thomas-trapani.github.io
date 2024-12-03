@@ -138,8 +138,12 @@ body {
     right: -10%; /* Cartes à gauche */
   }
 
-  .timeline-img-header h2 {
-  font-size: 12px;
+  h2 {
+    font-size: 20px;
+  }
+	
+  p {
+	font-size: 10px;
   }
 
   .timeline-img {
