@@ -138,6 +138,10 @@ body {
     right: -10%; /* Cartes à gauche */
   }
 
+  .timeline-img-header h2 {
+  font-size: 12px;
+  }
+
   .timeline-img {
     left: calc(91%); /* Image de connexion alignée avec la ligne à droite */
   }
