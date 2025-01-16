@@ -1,0 +1,113 @@
+#:kivy 2.1.0
+
+ScreenManager:
+    LoginScreen:
+    MainScreen:
+    CreateDiscussionScreen:
+    ChatScreen:
+
+<LoginScreen>:
+    name: "login"
+    BoxLayout:
+        orientation: "vertical"
+        padding: 20
+        spacing: 10
+
+        TextInput:
+            id: username
+            hint_text: "Nom d'utilisateur"
+            multiline: False
+
+        TextInput:
+            id: password
+            hint_text: "Mot de passe"
+            password: True
+            multiline: False
+
+        BoxLayout:
+            size_hint_y: None
+            height: 40
+            Button:
+                text: "Connexion"
+                on_release: root.login(username.text, password.text)
+            Button:
+                text: "Créer un compte"
+                on_release: root.register(username.text, password.text)
+
+        Button:
+            text: "Quitter"
+            on_release: root.retour()
+            size_hint: (1,0.3)
+
+
+<MainScreen>:
+    name: "main"
+    BoxLayout:
+        orientation: "vertical"
+        ScrollView:
+            BoxLayout:
+                id: discussion_list
+                orientation: "vertical"
+                size_hint_y: None
+                height: self.minimum_height
+        Button:
+            text: "Créer une discussion"
+            size_hint_y: None
+            height: 50
+            on_release: root.create_discussion()
+        
+        Button:
+            text: "Retour"
+            on_release: root.retour()
+            size_hint: (1,0.3)
+
+<CreateDiscussionScreen>:
+    name: "create_discussion"
+    BoxLayout:
+        orientation: "vertical"
+        TextInput:
+            id: member_input
+            hint_text: "Ajouter un membre (Nom d'utilisateur)"
+            multiline: False
+        Button:
+            text: "Ajouter"
+            on_release: root.add_member(member_input.text)
+        Label:
+            id: members_list
+            text: "Membres ajoutés : "
+        TextInput:
+            id: nom_input
+            hint_text: "Donnez un nom au groupe"
+            multiline: False
+        Button:
+            text: "Créer"
+            on_release: root.create(nom_input.text)
+        Button:
+            text: "Retour"
+            on_release: root.retour()
+            size_hint: (1,0.3)
+
+<ChatScreen>:
+    name: "chat"
+    BoxLayout:
+        orientation: "vertical"
+        ScrollView:
+            Label:
+                id: chat_log
+                size_hint_y: None
+                height: self.texture_size[1]
+        GridLayout:
+            cols: 2
+            TextInput:
+                id: message_input
+                multiline: False
+                hint_text: "Envoyer un message"
+                size_hint: (0.5,1)
+            Button:
+                text: "Envoyer"
+                on_release: root.send_message(message_input.text)
+                size_hint: (0.3,1)
+        Button:
+            text: "Retour"
+            on_release: root.retour()
+            size_hint: (1,0.3)
