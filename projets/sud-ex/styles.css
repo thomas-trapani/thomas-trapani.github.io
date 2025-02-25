@@ -5,62 +5,10 @@
 	}
 	
 	* {
+    font-size:large;
 	  transition: all 0.5s ease;
 	}
-
-    /* Quelques styles pour la section Témoignages */
-    #testimonials {
-      padding: 60px 20px;
-      background-color: #f0f0f0;
-    }
-    #testimonials h2 {
-      text-align: center;
-      font-size: 50px;
-      color: #1D95B6;
-      margin-bottom: 40px;
-    }
-    .testimonials-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-    .testimonial-card {
-      background: #fff;
-      width: 320px;
-      border-radius: 8px;
-      padding: 20px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      display: flex;
-      gap: 15px;
-    }
-    .testimonial-card img {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-    .testimonial-info h4 {
-      margin: 0;
-      font-size: 18px;
-      color: #016a87;
-    }
-    .testimonial-info span {
-      font-size: 14px;
-      color: #666;
-    }
-    .rating {
-      color: #FFC900;
-      margin: 5px 0;
-    }
-    .testimonial-info p {
-      font-size: 16px;
-      line-height: 1.5;
-      color: #016a87;
-    }
-
-
-
+	  
     span{
       color:#56d6f9;
     }
@@ -92,17 +40,23 @@
       transform: translateX(-50%);
       background-color: var(--jaune);
 	}
-  h5 {
+  pre {
     text-align: center;
     margin-top: 20px;
+    margin-right: 40px;
+    margin-left: 40px;
   color: var(--jaune);
   font-size: 50px;
   position: relative;
+  }
+  span{
+    font-size: 50px;
   }
 	
     .btn {
       display: inline-block;
       padding: 10px 20px;
+      font-size: 20px;
       background-color: var(--jaune);
       color: #fff;
       border-radius: 5px;
@@ -135,43 +89,6 @@ nav#nav-menu {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-/* --- MEDIA QUERY POUR LES PETITS ÉCRANS --- */
-@media (max-width: 768px) {
-  /* On affiche le hamburger, on cache le menu de base */
-  .menu-toggle {
-    display: block; /* Le hamburger apparaît */
-  }
-
-  /* Le menu sort de l'écran par la gauche ou la droite */
-  nav#nav-menu {
-    position: absolute;
-    top: 60px; /* en dessous de ton header fixe */
-    left: -100%; /* caché hors écran */
-    width: 100%;
-    background-color: #fff;
-    transition: left 0.3s ease;
-    z-index: 999;
-    display: flex;        /* important pour lister tes liens en colonne */
-    flex-direction: column;
-    align-items: center;
-  }
-
-  /* Quand on ajoute la classe .show en JS, le menu glisse à l’écran */
-  nav#nav-menu.show {
-    left: 0;
-  }
-
-  /* Les sous-menus ou <li> si tu veux aligner le texte */
-  nav#nav-menu ul {
-    flex-direction: column; /* liens en vertical */
-  }
-  
-  nav#nav-menu ul li {
-    padding: 15px 0; /* espace entre liens */
-    text-align: center;
-  }
 }
 
     header {
@@ -389,30 +306,93 @@ nav#nav-menu {
       padding: 60px 20px;
     }
     .carousel {
-	  justify-content: center;
+      justify-content: center;
       display: flex;
       overflow-x: auto;
       gap: 20px;
       padding: 20px;
+      scroll-snap-type: x mandatory; /* Ajout du snap pour bien aligner */
     }
+    
     .carousel-item {
       min-width: 150px;
       flex-shrink: 0;
       text-align: center;
+      scroll-snap-align: center; /* Assure que chaque élément s'aligne bien */
     }
-    .carousel-item img {
-      max-width: 100%;
-      height: auto;
+    
+    .carousel-item:first-child {
+      margin-left: 10px; /* Ajoute un petit espace pour éviter que ça colle à gauche */
     }
+    
     /* Section Google Maps */
     #map {
       padding: 60px 20px;
       text-align: center;
     }
     .map-container {
-      max-width: 800px;
+      max-width: 80%;
       margin: 0 auto;
     }
+    #petit{
+      display: none;
+    }
+
+    #contact-form {
+      margin: 60px auto;               /* Centre le formulaire et ajoute un espace au-dessus */
+      max-width: 600px;                /* Largeur max pour éviter que le formulaire ne s'étale trop */
+      background-color: #ffffff;       /* Couleur de fond */
+      padding: 20px;                   /* Espace interne */
+      box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Légère ombre autour */
+      border-radius: 8px;             /* Coins arrondis */
+    }
+    
+    #contact-form h2 {
+      margin-top: 0;
+      margin-bottom: 20px;
+      text-align: center;
+      color: var(--bleu);             /* Utilise ta variable CSS si tu en as une (sinon, mets un code couleur) */
+    }
+    
+    /* Label et champs de saisie */
+    #contact-form label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #333;
+    }
+    
+    #contact-form input[type="text"],
+    #contact-form input[type="email"],
+    #contact-form textarea {
+      width: 96%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 16px;
+      font-family: inherit; /* Pour garder la police de ton site */
+    }
+    
+    #contact-form textarea {
+      resize: vertical; /* Autorise la redimension verticale du champ */
+    }
+    
+    /* Bouton d'envoi */
+    #contact-form button[type="submit"] {
+      background-color: var(--jaune); /* Ta variable jaune (ou un code couleur hexadécimal #FFC900) */
+      color: #fff;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    
+    #contact-form button[type="submit"]:hover {
+      background-color: var(--bleu); /* Couleur de survol (ou autre) */
+    }
+
     /* Footer */
     footer {
       background: #333;
@@ -442,8 +422,15 @@ nav#nav-menu {
       background-color: #007BFF;
       color: #fff;
     }
+
     /* Responsive */
     @media(max-width: 768px) {
+      #grand{
+        display: none;
+      }
+      #petit{
+        display: block;
+      }
       nav ul {
         flex-direction: column;
       }
@@ -456,8 +443,52 @@ nav#nav-menu {
         align-items: center;
         text-align: center;
       }
+      h2{
+        font-size: 60px;
+      }
+      #advantages h2{
+        font-size: 40px;
+      }
       footer {
         flex-direction: column;
         text-align: center;
       }
-    }
+
+  header .logo img {
+    width: 400px;
+  } 
+  /* On affiche le hamburger, on cache le menu de base */
+  .menu-toggle {
+    padding-left: 10px;
+    display: block; /* Le hamburger apparaît */
+  }
+
+  /* Le menu sort de l'écran par la gauche ou la droite */
+  nav#nav-menu {
+    position: absolute;
+    top: 110px; /* en dessous de ton header fixe */
+    left: -100%; /* caché hors écran */
+    width: 100%;
+    background-color: #fff;
+    transition: left 0.3s ease;
+    z-index: 999;
+    display: flex;        /* important pour lister tes liens en colonne */
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Quand on ajoute la classe .show en JS, le menu glisse à l’écran */
+  nav#nav-menu.show {
+    left: 0;
+  }
+
+  /* Les sous-menus ou <li> si tu veux aligner le texte */
+  nav#nav-menu ul {
+    flex-direction: column; /* liens en vertical */
+  }
+  
+  nav#nav-menu ul li {
+    padding: 15px 0; /* espace entre liens */
+    text-align: center;
+  }
+}
