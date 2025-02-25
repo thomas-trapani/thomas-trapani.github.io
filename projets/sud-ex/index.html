@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SUD EXTERNALISATION</title>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOn0dnf7wSHy3-I8G-A5bJwZ8GX_61bCY&libraries=places"></script>
   <!-- Liaison vers le fichier CSS externe -->
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -101,61 +100,6 @@
       </div>
     </div>
   </section>
-
-
-  <!-- Section Témoignages Clients -->
-  <div id="testimonials"></div>
-
-  <script>
-    function initPlaceDetails() {
-      const placeId = "ChIJaTdVy2W_yRIRP7RqalLnFBE";
-      const service = new google.maps.places.PlacesService(document.createElement('div'));
-
-      service.getDetails(
-        {
-          placeId: placeId,
-          fields: ["reviews"] // On veut seulement les avis
-        },
-        (place, status) => {
-          if (status === google.maps.places.PlacesServiceStatus.OK && place.reviews) {
-            displayReviews(place.reviews);
-          } else {
-            console.error("Impossible de récupérer les avis :", status);
-          }
-        }
-      );
-    }
-
-    function displayReviews(reviews) {
-      const container = document.getElementById("testimonials");
-      container.innerHTML = "";
-
-      reviews.forEach((review) => {
-        const date = new Date(review.time * 1000).toLocaleDateString();
-        container.innerHTML += `
-          <div class="testimonial-card">
-            <img src="${review.profile_photo_url}" alt="${review.author_name}">
-            <div>
-              <h4>${review.author_name}</h4>
-              <span>${date}</span>
-              <div class="rating">${"★".repeat(review.rating)}</div>
-              <p>${review.text}</p>
-            </div>
-          </div>
-        `;
-      });
-    }
-
-    // Initialise la récupération des avis après le chargement de la page
-    window.onload = initPlaceDetails;
-  </script>
-
-  <!-- Explications sur le quota et la mise en cache :
-       - Google offre 200 $ de crédit mensuel pour l'API Places.
-       - Pour la récupération des avis, le coût est d'environ 17 $ par 1000 appels.
-       - En mettant en cache les avis pendant 1 heure via localStorage, tu limites le nombre d'appels.
-       - Par exemple, si ton site reçoit 10 000 visites par mois et que chaque visite charge les avis une fois par heure,
-         tu resteras largement dans le quota gratuit. -->
 
   <!-- Section Témoignages Clients -->
   <section id="testimonials">
