@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SUD EXTERNALISATION</title>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOn0dnf7wSHy3-I8G-A5bJwZ8GX_61bCY&libraries=places"></script>
   <!-- Liaison vers le fichier CSS externe -->
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -103,81 +104,50 @@
 
 
   <!-- Section Témoignages Clients -->
-  <section id="testimonials">
-    <h2>Témoignages Clients</h2>
-    <div class="testimonials-container">
-      <!-- Les avis seront injectés ici via JavaScript -->
-    </div>
-  </section>
+  <div id="testimonials"></div>
 
-  <!-- Script JavaScript pour récupérer et afficher les avis Google -->
   <script>
-    // Remplace ces valeurs par les tiennes
-    const placeId = "ChIJaTdVy2W_yRIRP7RqalLnFBE";    // Ex: "ChIJN1t_tDeuEmsRUsoyG83frY4"
-    const apiKey = "AIzaSyCOn0dnf7wSHy3-I8G-A5bJwZ8GX_61bCY";         // Ta clé API obtenue dans Google Cloud
+    function initPlaceDetails() {
+      const placeId = "ChIJaTdVy2W_yRIRP7RqalLnFBE";
+      const service = new google.maps.places.PlacesService(document.createElement('div'));
 
-    // Fonction pour récupérer les avis depuis l'API Google Places
-    async function fetchGoogleReviews() {
-      // Vérifie si des avis sont mis en cache dans localStorage
-      const cachedData = localStorage.getItem('googleReviews');
-      const cacheTime = localStorage.getItem('googleReviewsCacheTime');
-      const oneHour = 60 * 60 * 1000; // Durée de mise en cache : 1 heure en millisecondes
-
-      if (cachedData && cacheTime && (Date.now() - cacheTime < oneHour)) {
-        // Si les avis sont en cache et pas trop anciens, on les utilise
-        const reviews = JSON.parse(cachedData);
-        displayReviews(reviews);
-        return;
-      }
-
-      // Construis l'URL de la requête à l'API
-      const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=reviews&key=${apiKey}`;
-
-      try {
-        const response = await fetch(url);
-        const data = await response.json();
-
-        if (data.result && data.result.reviews) {
-          // Stocke les avis dans le cache pour une durée d'1 heure
-          localStorage.setItem('googleReviews', JSON.stringify(data.result.reviews));
-          localStorage.setItem('googleReviewsCacheTime', Date.now());
-          displayReviews(data.result.reviews);
-        } else {
-          console.error("Aucun avis trouvé ou erreur dans la réponse API.", data);
+      service.getDetails(
+        {
+          placeId: placeId,
+          fields: ["reviews"] // On veut seulement les avis
+        },
+        (place, status) => {
+          if (status === google.maps.places.PlacesServiceStatus.OK && place.reviews) {
+            displayReviews(place.reviews);
+          } else {
+            console.error("Impossible de récupérer les avis :", status);
+          }
         }
-      } catch (error) {
-        console.error("Erreur lors de la récupération des avis :", error);
-      }
+      );
     }
 
-    // Fonction pour afficher les avis dans la section Témoignages
     function displayReviews(reviews) {
-      const container = document.querySelector(".testimonials-container");
-      container.innerHTML = ""; // Vide le conteneur avant d'ajouter les avis
+      const container = document.getElementById("testimonials");
+      container.innerHTML = "";
 
-      reviews.forEach(review => {
-        // Formatage de la date (Google renvoie le temps en secondes)
+      reviews.forEach((review) => {
         const date = new Date(review.time * 1000).toLocaleDateString();
-
-        // Création de l'élément HTML pour l'avis
-        const reviewElement = document.createElement("div");
-        reviewElement.classList.add("testimonial-card");
-
-        reviewElement.innerHTML = `
-          <img src="${review.profile_photo_url}" alt="${review.author_name}">
-          <div class="testimonial-info">
-            <h4>${review.author_name}</h4>
-            <span>${date}</span>
-            <div class="rating">${"★".repeat(review.rating)}</div>
-            <p>${review.text}</p>
+        container.innerHTML += `
+          <div class="testimonial-card">
+            <img src="${review.profile_photo_url}" alt="${review.author_name}">
+            <div>
+              <h4>${review.author_name}</h4>
+              <span>${date}</span>
+              <div class="rating">${"★".repeat(review.rating)}</div>
+              <p>${review.text}</p>
+            </div>
           </div>
         `;
-        container.appendChild(reviewElement);
       });
     }
 
-    // Appel initial pour récupérer et afficher les avis
-    fetchGoogleReviews();
+    // Initialise la récupération des avis après le chargement de la page
+    window.onload = initPlaceDetails;
   </script>
 
   <!-- Explications sur le quota et la mise en cache :
