@@ -61,8 +61,8 @@
     <div class="card-banner">
       <!-- Texte pour grand écran -->
       <pre class="large-hero">
-Faites ce que vous aimez !    
-<span class="sout"> Nous on s'occupe du reste !</span>
+Faites ce que vous aimez !         
+     <span class="sout"> Nous on s'occupe du reste !</span>
       </pre>
       <!-- Texte pour téléphone -->
       <pre class="small-hero">
@@ -197,10 +197,10 @@ Faites ce que <br> vous aimez !
   <section id="map">
     <h2>Notre Cabinet</h2>
     <div class="map-container">
-      <!-- Deux iframes pour la carte : "petit" et "grand" (affichage responsive via CSS) -->
-      <iframe src="https://maps.google.com/maps?q=sud%20externalisalition%20marseille&#038;t=m&#038;z=11&#038;output=embed&#038;iwloc=near" width="500" height="300" style="border:0;" allowfullscreen="" id="petit" loading="lazy"></iframe>
-      <iframe src="https://maps.google.com/maps?q=sud%20externalisalition%20marseille&#038;t=m&#038;z=11&#038;output=embed&#038;iwloc=near" width="1000" height="500" style="border:0;" allowfullscreen="" id="grand" loading="lazy"></iframe>
-    </div>
+      <iframe src="https://maps.google.com/maps?q=sud%20externalisalition%20marseille&#038;t=m&#038;z=11&#038;output=embed&#038;iwloc=near" 
+          style="border:0;" allowfullscreen="" loading="lazy">
+      </iframe>
+    </div>  
   </section>
 
   <!-- =========================================================
@@ -244,16 +244,6 @@ Faites ce que <br> vous aimez !
   <!-- =========================================================
        SCRIPT : MENU RESPONSIVE (HAMBURGER)
   ========================================================= -->
-  <script>
-    // Sélection du bouton hamburger et du menu de navigation
-    const menuToggle = document.getElementById('menu-toggle');
-    const navMenu = document.getElementById('nav-menu');
-
-    // Au clic, on bascule la classe "show" pour afficher ou masquer le menu
-    menuToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('show');
-    });
-  </script>
-
+<script src="scripts.js"></script>
 </body>
 </html>
