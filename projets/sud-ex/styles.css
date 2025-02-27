@@ -237,6 +237,9 @@
   object-fit: contain; /* Ajuste l'image sans déformation */
 }
 
+.card .quolibri{
+  max-height: 150px;
+}
 
 /* Le bouton (ou lien "Lire la suite") est poussé en bas grâce à margin-top: auto */
 .card .btn {
