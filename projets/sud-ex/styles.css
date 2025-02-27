@@ -190,6 +190,14 @@
     color: #fff;
     text-align: center;
   }
+
+  /* Par défaut, afficher le texte pour grand écran et masquer le texte pour téléphone */
+  .large-hero {
+    display: block;
+  }
+  .small-hero {
+    display: none;
+  }
   
 /* =========================================================
    SECTION SERVICES
@@ -513,7 +521,15 @@
     text-align: center;
   }
   
-  /* Réduction de la taille du texte d'intro dans la section .hero (incluant le span) */
+  /* Affichage du texte hero pour téléphone : masquer le texte grand écran et afficher le texte mobile */
+  .large-hero {
+    display: none;
+  }
+  .small-hero {
+    display: block;
+  }
+  
+  /* Réduction de la taille du texte dans la section .hero pour éviter qu'il déborde */
   .hero .overlay pre,
   .hero .overlay pre span {
     font-size: 30px;
