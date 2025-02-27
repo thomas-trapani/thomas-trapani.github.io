@@ -12,7 +12,7 @@ function updateCSS() {
     styleElement.innerHTML = `
         @media (max-width: ${largeur}px) {
             * {
-                max-width: ${largeur-20}px !important;
+                max-width: ${largeur}px !important;
             }
         }
     `;
