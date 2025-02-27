@@ -226,13 +226,17 @@
   flex-direction: column;
 }
 
-/* Centre l'image horizontalement dans la carte */
+/* Centre l'image horizontalement dans la carte et limite sa taille */
 .card img {
   display: block;
   margin: 0 auto 20px auto; /* centré et espace en dessous */
-  max-width: 100%;
-  height: auto;
+  max-width: 90%; /* Empêche l'image de dépasser 90% de la largeur de la carte */
+  max-height: 80px; /* Hauteur maximale pour éviter qu'elle devienne énorme */
+  width: auto; /* Garde le ratio */
+  height: auto; /* Garde le ratio */
+  object-fit: contain; /* Ajuste l'image sans déformation */
 }
+
 
 /* Le bouton (ou lien "Lire la suite") est poussé en bas grâce à margin-top: auto */
 .card .btn {
