@@ -546,16 +546,25 @@
     margin: 10px 20px;
   }
   /*Avantages*/
-  #advantages {
-    padding: 10px; /* Réduction du padding pour éviter les marges trop grandes */
-    min-height: 100vh; /* S'assurer que la section prend toute la hauteur de l'écran */
+    #advantages {
+    padding: 20px 0; /* Supprime le padding latéral */
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow-x: hidden; /* Empêche le débordement horizontal */
   }
 
   #advantages div {
-    width: 80vw; /* Prend 95% de la largeur de l'écran */
+    width: 90vw; /* Légèrement réduit pour éviter tout dépassement */
+    max-width: none;
+    padding: 20px;
+    box-sizing: border-box; /* S'assure que padding + width ne dépassent pas */
+  }
+
+  /* Pour s'assurer que le body ne déborde pas */
+  body {
+    overflow-x: hidden;
   }
   /* Pour le carousel des partenaires : le premier partenaire ne sera plus décalé */
   .carousel-item:first-child {
