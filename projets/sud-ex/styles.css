@@ -71,15 +71,18 @@
   /* Bouton principal */
   .btn {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 12px 24px;
     font-size: 20px;
     background-color: var(--jaune);
     color: #fff;
     border-radius: 5px;
     margin-top: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   }
   .btn:hover {
     background-color: var(--bleu);
+    transform: translateY(-2px);
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
   }
   
   /* =========================================================
@@ -170,7 +173,7 @@
      SECTION HERO
      ========================================================= */
   .hero {
-    background: url('fond.jpg') center center/cover fixed;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('fond.jpg') center/cover fixed;
     height: 50vh;
     display: flex;
     align-items: center;
@@ -450,8 +453,11 @@
    RÉSPONSIVE (max-width: 768px)
    ========================================================= */
 @media(max-width: 768px) {
-  #logo-link{
-     width: 80%;
+  .logo-link img {
+    width: 60%;       /* Ajuste cette valeur selon tes besoins */
+    max-width: 150px; /* Limite la largeur maximale pour éviter qu'elle ne soit trop grande */
+    display: block;
+    margin: 0 auto;   /* Centre l'image horizontalement */
   }
   /* Affichage des iframes Google Maps */
   #grand {
