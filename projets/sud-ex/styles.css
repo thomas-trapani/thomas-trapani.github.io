@@ -545,7 +545,10 @@
     font-size: 30px;
     margin: 10px 20px;
   }
-  
+  /*Avantages*/
+  #advantages {
+    padding: 60px 10px;
+  }
   /* Pour le carousel des partenaires : le premier partenaire ne sera plus décalé */
   .carousel-item:first-child {
     margin-left: 0;
