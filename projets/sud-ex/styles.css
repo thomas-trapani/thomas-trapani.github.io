@@ -547,7 +547,8 @@
   }
   /*Avantages*/
   #advantages div {
-    padding: 60px 10px;
+    padding: 10px;
+     width: 99%;
   }
   /* Pour le carousel des partenaires : le premier partenaire ne sera plus décalé */
   .carousel-item:first-child {
