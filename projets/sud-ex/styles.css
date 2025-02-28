@@ -123,6 +123,7 @@
     padding: 10px;
   }
   header .logo img {
+    padding: 0px 0;
     max-width: 1000px;
     height: auto;
   }
