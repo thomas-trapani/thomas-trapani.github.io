@@ -501,7 +501,7 @@
   
   /* Redimensionnement du logo dans le header */
   header .logo img {
-    width: 400px;
+   width: 90vw; /* Légèrement réduit pour éviter tout dépassement */;
   }
   
   /* Affichage du hamburger et gestion du menu mobile */
