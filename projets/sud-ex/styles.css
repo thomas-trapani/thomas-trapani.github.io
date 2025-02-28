@@ -546,7 +546,7 @@
     margin: 10px 20px;
   }
   /*Avantages*/
-  #advantages {
+  #advantages div {
     padding: 60px 10px;
   }
   /* Pour le carousel des partenaires : le premier partenaire ne sera plus décalé */
