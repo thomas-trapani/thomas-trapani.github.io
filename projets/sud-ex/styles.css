@@ -449,6 +449,9 @@
    RÉSPONSIVE (max-width: 768px)
    ========================================================= */
 @media(max-width: 768px) {
+  #logo-link{
+     width: 80%;
+  }
   /* Affichage des iframes Google Maps */
   #grand {
     display: none;
