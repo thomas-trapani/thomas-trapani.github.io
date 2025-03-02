@@ -71,18 +71,15 @@
   /* Bouton principal */
   .btn {
     display: inline-block;
-    padding: 12px 24px;
+    padding: 10px 20px;
     font-size: 20px;
     background-color: var(--jaune);
     color: #fff;
     border-radius: 5px;
     margin-top: 10px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   }
   .btn:hover {
     background-color: var(--bleu);
-    transform: translateY(-2px);
-    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
   }
   
   /* =========================================================
@@ -126,7 +123,6 @@
     padding: 10px;
   }
   header .logo img {
-    padding: 0px 0;
     max-width: 1000px;
     height: auto;
   }
@@ -173,7 +169,7 @@
      SECTION HERO
      ========================================================= */
   .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('fond.jpg') center/cover fixed;
+    background: url('fond.jpg') center center/cover fixed;
     height: 50vh;
     display: flex;
     align-items: center;
@@ -244,6 +240,7 @@
 .card .quolibri{
   max-height: 150px;
 }
+
 
 /* Le bouton (ou lien "Lire la suite") est poussé en bas grâce à margin-top: auto */
 .card .btn {
@@ -370,7 +367,7 @@
      ========================================================= */
   #contact-form {
     margin: 60px auto;
-    width: 600px;
+    max-width: 600px;
     background-color: #ffffff;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -453,12 +450,6 @@
    RÉSPONSIVE (max-width: 768px)
    ========================================================= */
 @media(max-width: 768px) {
-  .logo-link img {
-    width: 60%;       /* Ajuste cette valeur selon tes besoins */
-    max-width: 150px; /* Limite la largeur maximale pour éviter qu'elle ne soit trop grande */
-    display: block;
-    margin: 0 auto;   /* Centre l'image horizontalement */
-  }
   /* Affichage des iframes Google Maps */
   #grand {
     display: none;
@@ -507,7 +498,7 @@
   
   /* Redimensionnement du logo dans le header */
   header .logo img {
-   width: 90vw; /* Légèrement réduit pour éviter tout dépassement */;
+    width: 400px;
   }
   
   /* Affichage du hamburger et gestion du menu mobile */
@@ -552,28 +543,7 @@
     font-size: 30px;
     margin: 10px 20px;
   }
-  /*Avantages*/
-    #advantages {
-    padding: 20px 0; /* Supprime le padding latéral */
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow-x: hidden; /* Empêche le débordement horizontal */
-  }
-
-  #advantages div {
-    width: 90vw; /* Légèrement réduit pour éviter tout dépassement */
-    max-width: none;
-    padding: 20px;
-    box-sizing: border-box; /* S'assure que padding + width ne dépassent pas */
-  }
-
-    /* Pour s'assurer que le body ne déborde pas */
-  body {
-    overflow-x: hidden;
-  }
-
+  
   /* Pour le carousel des partenaires : le premier partenaire ne sera plus décalé */
   .carousel-item:first-child {
     margin-left: 0;
