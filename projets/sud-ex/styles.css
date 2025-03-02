@@ -124,7 +124,7 @@ header .logo {
 }
 header .logo img {
   max-width: 1000px;
-  height: auto;
+  height: 80px;
 }
 
 /* Liste de navigation */
@@ -228,7 +228,7 @@ nav ul li ul li {
   display: block;
   margin: 0 auto 20px auto;
   max-width: 90%;
-  max-height: 300px;
+  max-height: 80px;
   width: auto;
   height: auto;
   object-fit: contain;
