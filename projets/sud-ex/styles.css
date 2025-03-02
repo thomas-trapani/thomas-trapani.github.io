@@ -1,291 +1,3 @@
-/* =========================================================
-   STYLE GÉNÉRAL ET VARIABLES
-   ========================================================= */
-   :root {
-    --bleu: #1D95B6;
-    --jaune: #FFC900;
-  }
-  
-  /* Règles de base pour tous les éléments */
-  * {
-    font-size: large;
-    transition: all 0.5s ease;
-  }
-  
-  /* Par défaut, tous les span ont cette couleur */
-  span {
-    color: #56d6f9;
-  }
-  
-  /* Configuration globale du body et de la page */
-  body, html {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    scroll-behavior: smooth;
-  }
-  
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-  
-  /* =========================================================
-     TYPOGRAPHIE
-     ========================================================= */
-  h2 {
-    text-align: center;
-    margin-top: 20px;
-    color: var(--bleu);
-    font-size: 50px;
-    position: relative;
-  }
-  
-  /* Barre décorative sous les h2 */
-  h2::after {
-    content: "";
-    margin-top: 20px;
-    display: block;
-    width: 67%;
-    height: 4px;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: var(--jaune);
-  }
-  
-  /* Style pour les balises <pre> utilisées dans la section Hero */
-  pre {
-    text-align: center;
-    margin: 20px 40px 0;
-    color: var(--jaune);
-    font-size: 50px;
-    position: relative;
-  }
-  
-  /* Classe pour un span spécifique dans le <pre> (définie dans le HTML) */
-  .sout {
-    font-size: 50px;
-  }
-  
-  /* Bouton principal */
-  .btn {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 20px;
-    background-color: var(--jaune);
-    color: #fff;
-    border-radius: 5px;
-    margin-top: 10px;
-  }
-  .btn:hover {
-    background-color: var(--bleu);
-  }
-  
-  /* =========================================================
-     HEADER & NAVIGATION
-     ========================================================= */
-  /* Bouton hamburger (affiché uniquement sur petit écran) */
-  .menu-toggle {
-    display: none;
-    cursor: pointer;
-    margin-right: 20px;
-  }
-  
-  .menu-toggle span {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background: var(--bleu);
-    margin: 5px 0;
-    transition: all 0.3s ease;
-  }
-  
-  /* Navigation en version desktop */
-  nav#nav-menu {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  /* Style du header */
-  header {
-    background-color: #fff;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 100;
-    border-bottom: 1px solid #ddd;
-  }
-  header .logo {
-    text-align: center;
-    padding: 10px;
-  }
-  header .logo img {
-    max-width: 1000px;
-    height: auto;
-  }
-  
-  /* Liste de navigation */
-  nav ul {
-    color: var(--bleu);
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-    background-color: #ffffff;
-  }
-  nav a:hover {
-    color: var(--jaune);
-  }
-  nav ul li {
-    position: relative;
-    padding: 15px 20px;
-    cursor: pointer;
-  }
-  
-  /* Sous-menu (Dropdown) */
-  nav ul li ul {
-    display: none;
-    position: absolute;
-    top: 50px;
-    left: 0;
-    background-color: #f8f8f8;
-    list-style: none;
-    padding: 10px 0;
-    min-width: 200px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
-  }
-  nav ul li:hover ul {
-    display: block;
-  }
-  nav ul li ul li {
-    padding: 10px 20px;
-  }
-  
-  /* =========================================================
-     SECTION HERO
-     ========================================================= */
-  .hero {
-    background: url('fond.jpg') center center/cover fixed;
-    height: 50vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    margin-top: 150px; /* Compense le header fixe */
-  }
-  
-  /* Overlay sur l'image de fond dans la section Hero */
-  .hero .overlay {
-    background: rgba(0,0,0,0.5);
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    color: #fff;
-    text-align: center;
-  }
-
-  /* Par défaut, afficher le texte pour grand écran et masquer le texte pour téléphone */
-  .large-hero {
-    display: block;
-  }
-  .small-hero {
-    display: none;
-  }
-  
-/* =========================================================
-   SECTION SERVICES
-   ========================================================= */
-#services {
-  padding: 60px 20px;
-  background-color: #f0f0f0;
-}
-
-.cards-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-
-/* Chaque carte est un conteneur flex en colonne pour pouvoir pousser le bouton vers le bas */
-.card {
-  background: #fff;
-  width: 280px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  padding: 20px;
-  display: flex;
-  text-align: center;
-  flex-direction: column;
-}
-
-/* Centre l'image horizontalement dans la carte et limite sa taille */
-.card img {
-  display: block;
-  margin: 0 auto 20px auto; /* centré et espace en dessous */
-  max-width: 90%; /* Empêche l'image de dépasser 90% de la largeur de la carte */
-  max-height: 80px; /* Hauteur maximale pour éviter qu'elle devienne énorme */
-  width: auto; /* Garde le ratio */
-  height: auto; /* Garde le ratio */
-  object-fit: contain; /* Ajuste l'image sans déformation */
-}
-
-.card .quolibri{
-  max-height: 150px;
-}
-
-
-/* Le bouton (ou lien "Lire la suite") est poussé en bas grâce à margin-top: auto */
-.card .btn {
-  margin-top: auto;
-}
-
-  
-  /* =========================================================
-     SECTION TÉMOIGNAGES CLIENTS
-     ========================================================= */
-  #testimonials {
-    padding: 60px 20px;
-  }
-  .testimonials-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-  }
-  .testimonial-card {
-    background: #fff;
-    width: 320px;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    display: flex;
-    gap: 15px;
-  }
-  .testimonial-card img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-  .testimonial-info {
-    text-align: left;
-    flex: 1;
-  }
-  .testimonial-info h4 {
-    margin: 0;
-  }
-  .rating {
-    color: #FFC107;
-  }
-  
   /* =========================================================
      SECTION AVANTAGES DE L'EXTERNALISATION
      ========================================================= */
@@ -321,135 +33,14 @@
     font-size: large;
     line-height: 1.6;
   }
-  
-  /* =========================================================
-     SECTION PARTENAIRES (CAROUSEL)
-     ========================================================= */
-  #partners {
-    padding: 60px 20px;
-  }
-  .carousel {
-    justify-content: center;
-    display: flex;
-    overflow-x: auto;
-    gap: 20px;
-    padding: 20px;
-    scroll-snap-type: x mandatory;
-  }
-  .carousel-item {
-    min-width: 150px;
-    flex-shrink: 0;
-    text-align: center;
-    scroll-snap-align: center;
-  }
-  .carousel-item:first-child {
-    margin-left: 10px;
-  }
-  
-  /* =========================================================
-     SECTION GOOGLE MAPS
-     ========================================================= */
-  #map {
-    padding: 60px 20px;
-    text-align: center;
-  }
-  .map-container {
-    max-width: 80%;
-    margin: 0 auto;
-  }
-  /* Par défaut, l'iframe "petit" est masquée */
-  #petit {
-    display: none;
-  }
-  
-  /* =========================================================
-     SECTION FORMULAIRE DE CONTACT
-     ========================================================= */
-  #contact-form {
-    margin: 60px auto;
-    max-width: 600px;
-    background-color: #ffffff;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    border-radius: 8px;
-  }
-  #contact-form h2 {
-    margin-top: 0;
-    margin-bottom: 20px;
-    text-align: center;
-    color: var(--bleu);
-  }
-  /* Styles pour labels et champs du formulaire */
-  #contact-form label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #333;
-  }
-  #contact-form input[type="text"],
-  #contact-form input[type="email"],
-  #contact-form textarea {
-    width: 96%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 16px;
-    font-family: inherit;
-  }
-  #contact-form textarea {
-    resize: vertical;
-  }
-  /* Bouton d'envoi du formulaire */
-  #contact-form button[type="submit"] {
-    background-color: var(--jaune);
-    color: #fff;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  #contact-form button[type="submit"]:hover {
-    background-color: var(--bleu);
-  }
-  
-  /* =========================================================
-     FOOTER
-     ========================================================= */
-  footer {
-    background: #333;
-    color: #fff;
-    padding: 40px 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-  footer div {
-    margin: 10px;
-  }
-  footer .footer-social a img {
-    width: 30px;
-    margin-right: 10px;
-  }
-  footer form input[type="email"] {
-    padding: 8px;
-    border: none;
-    border-radius: 4px;
-    margin-right: 10px;
-  }
-  footer form button {
-    padding: 8px 15px;
-    border: none;
-    border-radius: 4px;
-    background-color: #007BFF;
-    color: #fff;
-  }
-  
+
   /* =========================================================
    RÉSPONSIVE (max-width: 768px)
    ========================================================= */
 @media(max-width: 768px) {
+  #logo-link{
+     width: 80%;
+  }
   /* Affichage des iframes Google Maps */
   #grand {
     display: none;
@@ -486,25 +77,8 @@
   h2 {
     font-size: 60px;
   }
-  #advantages {
-    padding: 20px 0; /* Supprime le padding latéral */
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow-x: hidden; /* Empêche le débordement horizontal */
-  }
-
-  #advantages div {
-    width: 90vw; /* Légèrement réduit pour éviter tout dépassement */
-    max-width: none;
-    padding: 20px;
-    box-sizing: border-box; /* S'assure que padding + width ne dépassent pas */
-  }
-
-  /* Pour s'assurer que le body ne déborde pas */
-  body {
-    overflow-x: hidden;
+  #advantages h2 {
+    font-size: 40px;
   }
   
   /* Réorganisation du footer */
@@ -560,7 +134,26 @@
     font-size: 30px;
     margin: 10px 20px;
   }
-  
+  /*Advantages*/
+  #advantages {
+    padding: 20px 0; /* Supprime le padding latéral */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden; /* Empêche le débordement horizontal */
+  }
+
+  #advantages div {
+    width: 90vw; /* Légèrement réduit pour éviter tout dépassement */
+    max-width: none;
+    padding: 20px;
+    box-sizing: border-box; /* S'assure que padding + width ne dépassent pas */
+  }
+  /* Pour s'assurer que le body ne déborde pas */
+  body {
+    overflow-x: hidden;
+  }
   /* Pour le carousel des partenaires : le premier partenaire ne sera plus décalé */
   .carousel-item:first-child {
     margin-left: 0;
