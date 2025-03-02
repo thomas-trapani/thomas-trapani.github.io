@@ -124,7 +124,7 @@ header .logo {
 }
 header .logo img {
   max-width: 1000px;
-  height: 80px;
+  height: auto;
 }
 
 /* Liste de navigation */
@@ -444,7 +444,9 @@ footer form button {
   #petit {
     display: block;
   }
-  
+  header .logo img {
+    height: 80%;
+  }
   /* Menu de navigation en mode mobile */
   nav ul {
     flex-direction: column;
