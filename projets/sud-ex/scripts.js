@@ -35,7 +35,7 @@ function updateMapSize() {
         mapIframe.width = newWidth;
         mapIframe.height = newHeight;
     } else if (largeur < 400) { // Petit écran
-        let newWidth = largeur - 50;
+        let newWidth = largeur - 100;
         let newHeight = newWidth / 1.5; // Hauteur = proportion adaptée au mobile
 
         mapIframe.width = newWidth;
