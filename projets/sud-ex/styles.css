@@ -125,6 +125,7 @@ header .logo {
 header .logo img {
   max-width: 1000px;
   height: auto;
+  object-fit: contain;
 }
 
 /* Liste de navigation */
@@ -445,7 +446,7 @@ footer form button {
     display: block;
   }
   header .logo img {
-    height: 30px;
+    height: 50px;
   }
   /* Menu de navigation en mode mobile */
   nav ul {
