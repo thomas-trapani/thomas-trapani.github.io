@@ -486,8 +486,25 @@
   h2 {
     font-size: 60px;
   }
-  #advantages h2 {
-    font-size: 40px;
+  #advantages {
+    padding: 20px 0; /* Supprime le padding latéral */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden; /* Empêche le débordement horizontal */
+  }
+
+  #advantages div {
+    width: 90vw; /* Légèrement réduit pour éviter tout dépassement */
+    max-width: none;
+    padding: 20px;
+    box-sizing: border-box; /* S'assure que padding + width ne dépassent pas */
+  }
+
+  /* Pour s'assurer que le body ne déborde pas */
+  body {
+    overflow-x: hidden;
   }
   
   /* Réorganisation du footer */
