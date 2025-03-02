@@ -29,7 +29,7 @@ function updateMapSize() {
     let largeur = window.innerWidth;
 
     if (largeur >= 768) { // Grand écran
-        let newWidth = largeur - 500;
+        let newWidth = largeur - 200;
         let newHeight = newWidth / 2; // Hauteur = moitié de la largeur
 
         mapIframe.width = newWidth;
