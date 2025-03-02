@@ -569,10 +569,7 @@
     box-sizing: border-box; /* S'assure que padding + width ne dépassent pas */
   }
 
-  /* Pour s'assurer que le body ne déborde pas */
-  body {
-    overflow-x: hidden;
-  }
+
   /* Pour le carousel des partenaires : le premier partenaire ne sera plus décalé */
   .carousel-item:first-child {
     margin-left: 0;
