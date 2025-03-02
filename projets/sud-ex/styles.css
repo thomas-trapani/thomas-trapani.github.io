@@ -228,9 +228,8 @@ nav ul li ul li {
   display: block;
   margin: 0 auto 20px auto;
   max-width: 90%;
-  max-height: 80px;
+  height: 80px;
   width: auto;
-  height: auto;
   object-fit: contain;
 }
 /* Le bouton est poussé en bas */
