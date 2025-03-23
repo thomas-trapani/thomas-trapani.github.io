@@ -10,6 +10,7 @@
   <!-- Liaison vers le fichier CSS externe -->
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="base.css">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 
@@ -57,7 +58,7 @@
   <!-- =========================================================
        SECTION HERO : IMAGE DE FOND, OVERLAY & FORMES SVG
   ========================================================= -->
-  <section class="hero">
+  <section class="hero" data-aos="fade-up">
     <div class="overlay">
       <div class="card-banner">
         <!-- Texte pour grand écran -->
@@ -89,25 +90,25 @@ Faites ce que <br> vous aimez !
     <h2>Nos Services</h2>
     <div class="cards-container">
       <div class="card">
-        <img src="https://www.sud-externalisation.fr/wp-content/uploads/2022/08/Logo-Sud-Daf-externalise-marseille-footer-1024x269.png" alt="Service 1">
+        <img src="logo_SudDaf.png" alt="Logo Sud Daf">
         <p>Difficile, quand on est une TPE ou une PME, de s’offrir les services d’un directeur financier. Pourtant, son expertise est décisive dans…</p>
-        <a href="service1.html" class="btn">Lire la suite</a>
+        <a href="/Sud-Daf" class="btn">Lire la suite</a>
       </div>
       <div class="card">
-        <img src="https://www.sud-externalisation.fr/wp-content/uploads/2022/08/logo-sud-rh-externalise-gestion-de-la-paie-marseille-footer-960x252.png" alt="Service 2">
+        <img src="logo_SudRH.png" alt="Logo Sud RH">
         <p>Devenue un levier incontournable de transformation de compétitivité, l’externalisation de la fonction RH est une pratique qui se développe…</p>
-        <a href="service2.html" class="btn">Lire la suite</a>
+        <a href="/Sud-RH" class="btn">Lire la suite</a>
       </div>
       <div class="card">
-        <img src="https://www.sud-externalisation.fr/wp-content/uploads/2022/08/logo-sud-com-service-communication-externalise-entreprise-marseille-footer-1-960x252.png" alt="Service 3">
+        <img src="Logo_SudCom.png" alt="Logo Sud Com">
         <p>Notre service expert en communication se chargera de développer la notoriété de votre entreprise et monter en puissance face à vos concurrents…</p>
-        <a href="service3.html" class="btn">Lire la suite</a>
+        <a href="/Sud-Com" class="btn">Lire la suite</a>
       </div>
       <div class="card">
-        <img src="https://www.sud-externalisation.fr/wp-content/uploads/elementor/thumbs/quo-libri-centre-de-formation-professionnelle-a-marseille-logo-ptvpzw3xvrwngokxgzxbabljguyem7mfna6jno1p8q.png" alt="Service 4">
+        <img src="Logo_QuoLibri.png" alt="Logo Quo Libri">
         <h3>Formation professionnelle</h3>
         <p>Certifiée QUALIOPI !!!</p>
-        <a href="service4.html" class="btn">Lire la suite</a>
+        <a href="/Quo-Libri" class="btn">Lire la suite</a>
       </div>
     </div>
   </section>
@@ -146,34 +147,6 @@ Faites ce que <br> vous aimez !
         </div>
       </div>
       <!-- Ajoutez d'autres témoignages si nécessaire -->
-    </div>
-  </section>
-
-  <!-- =========================================================
-       SECTION AVANTAGES DE L'EXTERNALISATION
-  ========================================================= -->
-  <section id="advantages">
-    <div>
-      <h2>Quels sont les avantages de l'externalisation ?</h2>
-      <p>
-        L’externalisation correspond à une organisation du travail qui permet à une entreprise de déléguer certains processus métiers à un prestataire externe.
-        <br>
-        Cette nouvelle manière de travailler connait un vrai essor à travers le monde.
-        <br>
-        Et pour cause, elle recèle d’innombrables avantages !
-      </p>
-      <ul>
-        <li>La réduction des dépenses et des frais généraux (pas de frais de recrutement, réduction de la masse salariale, tarifs attractifs des agences d’externalisation).</li>
-        <li>Le gain de réactivité de l’entreprise donneuse d’ordre.</li>
-        <li>Le contrôle de ses coûts en raison des tarifs attractifs proposés par les prestataires.</li>
-        <li>La réduction des délais d’exécution.</li>
-        <li>La possibilité de recentrer les équipes internes sur leur cœur de métier et de déléguer les tâches secondaires à un collectif externe.</li>
-        <li>L’acquisition de nouvelles compétences grâce aux services d’une agence spécialisée.</li>
-        <li>L’accès à une main-d’œuvre spécialisée et qualifiée.</li>
-        <li>L’accroissement de la flexibilité des ressources humaines.</li>
-        <li>L’amélioration de la compétitivité de l’entreprise.</li>
-      </ul>
-      <a href="./equipe/" class="btn">Découvrez notre équipe</a>
     </div>
   </section>
 
@@ -242,5 +215,12 @@ Faites ce que <br> vous aimez !
   </footer>
   <script src="scripts.js"></script>
 
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,  // Durée de l'animation en ms
+      once: true      // L'animation se déclenche une seule fois
+    });
+  </script>
 </body>
 </html>
