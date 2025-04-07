@@ -1,3 +1,21 @@
+gsap.registerPlugin(ScrollTrigger);
+
+  gsap.utils.toArray('.fade-up').forEach(elem => {
+    gsap.fromTo(elem,
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        scrollTrigger: {
+          trigger: elem,
+          start: 'top 80%',
+          end: 'top 20%',
+          scrub: true, // animation fluide selon le scroll
+        }
+      }
+    );
+  });
+
 function updateCSS() {
     let largeur = window.innerWidth;
     document.documentElement.style.setProperty('--window-width', largeur + 'px');

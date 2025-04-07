@@ -58,7 +58,7 @@
   <!-- =========================================================
        SECTION HERO : IMAGE DE FOND, OVERLAY & FORMES SVG
   ========================================================= -->
-  <section class="hero" data-aos="fade-up">
+  <section class="hero">
     <div class="overlay">
       <div class="card-banner">
         <!-- Texte pour grand écran -->
@@ -80,7 +80,7 @@ Faites ce que <br> vous aimez !
   ========================================================= -->
   <section id="services">
     <h2>Nos Services</h2>
-    <div class="cards-container" data-aos="fade-up">
+    <div class="cards-container fade-up">
       <div class="card">
         <img src="logo_SudDaf.png" alt="Logo Sud Daf">
         <p>Difficile, quand on est une TPE ou une PME, de s’offrir les services d’un directeur financier. Pourtant, son expertise est décisive dans…</p>
@@ -108,7 +108,7 @@ Faites ce que <br> vous aimez !
   <!-- =========================================================
        SECTION TÉMOIGNAGES CLIENTS
   ========================================================= -->
-  <section id="testimonials" data-aos="fade-up">
+  <section id="testimonials fade-up">
     <h2>Témoignages Clients</h2>
     <div class="testimonials-container">
       <div class="testimonial-card">
@@ -145,7 +145,7 @@ Faites ce que <br> vous aimez !
   <!-- =========================================================
        SECTION PARTENAIRES (CAROUSEL)
   ========================================================= -->
-  <section id="partners" data-aos="fade-up">
+  <section id="partners fade-up">
     <h2>Nos Réseaux Membres &amp; Partenaires</h2>
     <div class="carousel">
       <div class="carousel-item"><img src="https://www.sud-externalisation.fr/wp-content/uploads/2022/09/membres-reseaux-dfcg-marseille.jpg" alt="Partenaire 1"></div>
@@ -159,7 +159,7 @@ Faites ce que <br> vous aimez !
   <!-- =========================================================
        SECTION GOOGLE MAPS
   ========================================================= -->
-  <section id="map" data-aos="fade-up">
+  <section id="map fade-up">
     <h2>Notre Cabinet</h2>
     <div class="map-container">
       <!-- Deux iframes pour la carte : "petit" et "grand" (affichage responsive via CSS) -->
@@ -171,7 +171,7 @@ Faites ce que <br> vous aimez !
   <!-- =========================================================
        SECTION FORMULAIRE DE CONTACT
   ========================================================= -->
-  <section id="contact-form" data-aos="fade-up">
+  <section id="contact-form fade-up">
     <h2>Formulaire de contact</h2>
     <form>
       <label for="name">Nom :</label>
@@ -205,14 +205,9 @@ Faites ce que <br> vous aimez !
       <p>© Copyright 2022 SUD Externalisation | Conception par Thomas Trapani |</p>
     </div>
   </footer>
+  <!-- GSAP CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <script src="scripts.js"></script>
-
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 800,  // Durée de l'animation en ms
-      once: true      // L'animation se déclenche une seule fois
-    });
-  </script>
 </body>
 </html>
