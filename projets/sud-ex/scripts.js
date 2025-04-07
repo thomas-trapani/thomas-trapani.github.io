@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     gsap.registerPlugin(ScrollTrigger);
   
     gsap.utils.toArray('.fade-up').forEach(elem => {
-      // Animation d'entrée
+      // Apparition (fade-up)
       gsap.fromTo(elem,
         { opacity: 0, y: 50 },
         {
@@ -12,28 +12,29 @@ document.addEventListener("DOMContentLoaded", function () {
           ease: "power2.out",
           scrollTrigger: {
             trigger: elem,
-            start: "top 80%",
-            end: "top 50%", // Fin de l'entrée
-            toggleActions: "play none none reverse" // Réverse quand on ressort
+            start: "top 95%", // 👈 Plus tôt : déclenche presque dès qu'il entre
+            end: "top 70%",   // 👈 Laisse un peu de marge
+            toggleActions: "play none none reverse"
           }
         }
       );
   
-      // Animation de sortie
+      // Disparition (fade-out vers le haut)
       gsap.to(elem, {
         opacity: 0,
-        y: -30,
+        y: -30, 
         duration: 0.6,
         ease: "power2.in",
         scrollTrigger: {
           trigger: elem,
-          start: "top 30%", // Quand le haut de l’élément atteint 30% du viewport
-          end: "top 0%",
+          start: "bottom 40%", // 👈 Plus tard : quand l’élément a bien défilé
+          end: "bottom 20%",   // 👈 Quitte lentement le cadre
           toggleActions: "play none none reverse"
         }
       });
     });
   });
+  
   
   
 
