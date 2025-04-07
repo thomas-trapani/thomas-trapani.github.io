@@ -2,21 +2,39 @@ document.addEventListener("DOMContentLoaded", function () {
     gsap.registerPlugin(ScrollTrigger);
   
     gsap.utils.toArray('.fade-up').forEach(elem => {
+      // Animation d'entrée
       gsap.fromTo(elem,
         { opacity: 0, y: 50 },
         {
           opacity: 1,
           y: 0,
+          duration: 0.8,
+          ease: "power2.out",
           scrollTrigger: {
             trigger: elem,
-            start: 'top 80%',
-            end: 'top 20%',
-            scrub: true
+            start: "top 80%",
+            end: "top 50%", // Fin de l'entrée
+            toggleActions: "play none none reverse" // Réverse quand on ressort
           }
         }
       );
+  
+      // Animation de sortie
+      gsap.to(elem, {
+        opacity: 0,
+        y: -30,
+        duration: 0.6,
+        ease: "power2.in",
+        scrollTrigger: {
+          trigger: elem,
+          start: "top 30%", // Quand le haut de l’élément atteint 30% du viewport
+          end: "top 0%",
+          toggleActions: "play none none reverse"
+        }
+      });
     });
   });
+  
   
 
 function updateCSS() {
