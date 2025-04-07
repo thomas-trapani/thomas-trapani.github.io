@@ -220,10 +220,15 @@ p strong {
      SECTION GOOGLE MAPS
      ========================================================= */
   #map {
-    padding: 60px 20px;
+    padding-top: 60px;
+    padding-left: 20px;
     text-align: center;
   }
   .map-container {
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     max-width: 80%;
     margin: 0 auto;
   }
@@ -235,29 +240,29 @@ p strong {
   /* =========================================================
      SECTION FORMULAIRE DE CONTACT
      ========================================================= */
-  #contact-form {
-    margin: 60px auto;
+  form {
+    margin: 20px 30px;
     width: 600px;
     background-color: #ffffff;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     border-radius: 8px;
   }
-  #contact-form h2 {
+  form h2 {
     margin-top: 0;
     margin-bottom: 20px;
     text-align: center;
     color: var(--bleu);
   }
-  #contact-form label {
+  form label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
     color: #333;
   }
-  #contact-form input[type="text"],
-  #contact-form input[type="email"],
-  #contact-form textarea {
+  form input[type="text"],
+  form input[type="email"],
+  form textarea {
     width: 96%;
     padding: 10px;
     margin-bottom: 20px;
@@ -266,10 +271,10 @@ p strong {
     font-size: 16px;
     font-family: inherit;
   }
-  #contact-form textarea {
+  form textarea {
     resize: vertical;
   }
-  #contact-form button[type="submit"] {
+  form button[type="submit"] {
     background-color: var(--jaune);
     color: #fff;
     padding: 12px 24px;
@@ -278,7 +283,7 @@ p strong {
     cursor: pointer;
     font-size: 16px;
   }
-  #contact-form button[type="submit"]:hover {
+  form button[type="submit"]:hover {
     background-color: var(--bleu);
   }
   
