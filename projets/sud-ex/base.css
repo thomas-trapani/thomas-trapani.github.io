@@ -5,6 +5,10 @@
     --bleu: #1D95B6;
     --jaune: #FFC900;
   }
+
+  header .logo img {
+    display: none;
+  }
   
   /* Règles de base pour tous les éléments */
   * {
@@ -85,6 +89,25 @@
   /* =========================================================
      HEADER & NAVIGATION
      ========================================================= */
+/* Conteneur pour centrer le menu et gérer l'espacement (Desktop Only) */
+@media (min-width: 769px) {
+  .nav-container {
+    max-width: 1200px; /* Largeur maximale du conteneur */
+    margin: 0 auto; /* Centre le conteneur horizontalement */
+    padding-left: 20px; /* Espacement à gauche */
+    padding-right: 20px; /* Espacement à droite */
+    display: flex; /* Ajout de display: flex pour aligner le contenu */
+    justify-content: center; /* Centre le contenu horizontalement */
+    width: 100%; /* Prend toute la largeur disponible */
+  }
+
+  nav#nav-menu ul {
+    flex: 1; /* Permet au menu de prendre l'espace disponible */
+    justify-content: center; /* Centre les éléments du menu */
+  }
+}
+
+
   /* Bouton hamburger (affiché uniquement sur petit écran) */
   .menu-toggle {
     display: none;
@@ -116,19 +139,21 @@
     top: 0;
     left: 0;
     z-index: 100;
+
     border-bottom: 1px solid #ddd;
   }
   header .logo {
+    justify-content: center;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
     text-align: center;
     padding: 10px;
     padding-bottom: 10px;
   }
-  header .logo img {
-    max-width: 1000px;
-    padding-left: 100px;
-    padding-right: 100px;
-    height: auto;
-    object-fit: contain;
+  header img {
+    height: 65px;
   }
   
   /* Liste de navigation */
@@ -231,15 +256,22 @@
         text-align: center;
       }
       
-      /* Redimensionnement du logo dans le header */
-      header .logo img {
+      /* Suppréssion du logo dans le menu déroulé */
+      nav img {
         width: 400px;
+        display: none;
+      }
+
+      /* Suppréssion du logo dans le menu déroulé */
+      header img {
+        width: 300px;
       }
       
       /* Affichage du hamburger et gestion du menu mobile */
       .menu-toggle {
         padding-left: 10px;
         display: block;
+        width: 30px;
       }
       nav#nav-menu {
         position: absolute;

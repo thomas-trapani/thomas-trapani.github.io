@@ -25,11 +25,13 @@
         <span></span>
         <span></span>
       </div>
+      <img src="Logo_SudExternalisation.png" alt="Logo SUD Externalisation">
       <!-- Logo -->
     </div>
     
     <!-- Menu de navigation -->
-    <nav id="nav-menu">
+  <nav id="nav-menu">
+    <div class="nav-container">
       <img src="logo_SudEx.png" alt="Logo SUD Externalisation">
       <ul>
         <li>
@@ -43,7 +45,9 @@
         <li>
           <a href="#">NOS PRESTATIONS</a>
           <ul>
-            <li><a href="service1.html">Direction Administrative &amp; Financière &amp; Contrôle de gestion</a></li>
+            <li>
+              <a href="service1.html">Direction Administrative &amp; Financière &amp; Contrôle de gestion</a>
+            </li>
             <li><a href="service2.html">Ressources humaines &amp; Gestion de la paie</a></li>
             <li><a href="service3.html">Service de communication pour les entreprises</a></li>
             <li><a href="service4.html">Formation professionnelle</a></li>
@@ -52,35 +56,40 @@
         <li><a href="#">NOS REFERENCES</a></li>
         <li><a href="#contact-form">CONTACT &amp; DEVIS</a></li>
       </ul>
-    </nav>
-  </header>
+    </div>
+  </nav>
+</header>
 
   <!-- =========================================================
        SECTION HERO : IMAGE DE FOND, OVERLAY & FORMES SVG
   ========================================================= -->
-  <section class="hero">
-    <div class="overlay">
-      <div class="card-banner">
-        <!-- Texte pour grand écran -->
-        <pre class="large-hero">
-Faites ce que vous aimez !    
-<span class="sout"> Nous on s'occupe du reste !</span>
-        </pre>
-        <!-- Texte pour téléphone -->
-        <pre class="small-hero">
-Faites ce que <br> vous aimez !    
-<span class="sout"> Nous on s'occupe <br> du reste !</span>
-        </pre>
+  <div class="hero">
+    <div class="container">
+      <div class="logo-and-text">
+        <img src="Logo_SudExternalisationGros.png" alt="Logo SUD Externalisation" class="logo">
+        <div class="text-content">
+          <h1>Faites ce que vous aimez, on s'occupe du reste</h1>
+          <hr class="yellow-line">
+          <p>
+            Vous n’avez pas le temps de gérer vos ressources humaines ?
+            <br>Vous avez besoin d’un directeur financier à temps partiel ?
+            <br>Vous souhaitez vous concentrer sur votre cœur de métier ?
+            <br>Vous avez besoin d'un site web mais n'avez pas envie de vous en occuper ?
+            <br>Vous avez besoin de former vos équipes ?
+          </p>
+          <p><strong>NOUS</strong> sommes là pour s'occuper de vos fonctions supports.</p>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
+  
 
   <!-- =========================================================
        SECTION SERVICES : 4 CARTES DE SERVICES
   ========================================================= -->
   <section id="services">
     <h2>Nos Services</h2>
-    <div class="cards-container" class="fade-up">
+    <div class="cards-container" data-aos="fade-up">
       <div class="card">
         <img src="logo_SudDaf.png" alt="Logo Sud Daf">
         <p>Difficile, quand on est une TPE ou une PME, de s’offrir les services d’un directeur financier. Pourtant, son expertise est décisive dans…</p>
@@ -108,7 +117,7 @@ Faites ce que <br> vous aimez !
   <!-- =========================================================
        SECTION TÉMOIGNAGES CLIENTS
   ========================================================= -->
-  <section id="testimonials" class="fade-up">
+  <section id="testimonials" data-aos="fade-up">
     <h2>Témoignages Clients</h2>
     <div class="testimonials-container">
       <div class="testimonial-card">
@@ -145,7 +154,7 @@ Faites ce que <br> vous aimez !
   <!-- =========================================================
        SECTION PARTENAIRES (CAROUSEL)
   ========================================================= -->
-  <section id="partners" class="fade-up">
+  <section id="partners" data-aos="fade-up">
     <h2>Nos Réseaux Membres &amp; Partenaires</h2>
     <div class="carousel">
       <div class="carousel-item"><img src="https://www.sud-externalisation.fr/wp-content/uploads/2022/09/membres-reseaux-dfcg-marseille.jpg" alt="Partenaire 1"></div>
@@ -159,7 +168,7 @@ Faites ce que <br> vous aimez !
   <!-- =========================================================
        SECTION GOOGLE MAPS
   ========================================================= -->
-  <section id="map" class="fade-up">
+  <section id="map" data-aos="fade-up">
     <h2>Notre Cabinet</h2>
     <div class="map-container">
       <!-- Deux iframes pour la carte : "petit" et "grand" (affichage responsive via CSS) -->
@@ -171,7 +180,7 @@ Faites ce que <br> vous aimez !
   <!-- =========================================================
        SECTION FORMULAIRE DE CONTACT
   ========================================================= -->
-  <section id="contact-form" class="fade-up">
+  <section id="contact-form" data-aos="fade-up">
     <h2>Formulaire de contact</h2>
     <form>
       <label for="name">Nom :</label>
@@ -205,9 +214,7 @@ Faites ce que <br> vous aimez !
       <p>© Copyright 2022 SUD Externalisation | Conception par Thomas Trapani |</p>
     </div>
   </footer>
-  <!-- GSAP CDN -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script src="scripts.js"></script>
 </body>
 </html>

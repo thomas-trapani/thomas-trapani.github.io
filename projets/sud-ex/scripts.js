@@ -1,42 +1,7 @@
-document.addEventListener("DOMContentLoaded", function () {
-    gsap.registerPlugin(ScrollTrigger);
-  
-    gsap.utils.toArray('.fade-up').forEach(elem => {
-      // Apparition (fade-up)
-      gsap.fromTo(elem,
-        { opacity: 0, y: 50 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: elem,
-            start: "top 95%", // 👈 Plus tôt : déclenche presque dès qu'il entre
-            end: "top 70%",   // 👈 Laisse un peu de marge
-            toggleActions: "play none none reverse"
-          }
-        }
-      );
-  
-      // Disparition (fade-out vers le haut)
-      gsap.to(elem, {
-        opacity: 0,
-        y: -30, 
-        duration: 0.6,
-        ease: "power2.in",
-        scrollTrigger: {
-          trigger: elem,
-          start: "bottom 40%", // 👈 Plus tard : quand l’élément a bien défilé
-          end: "bottom 20%",   // 👈 Quitte lentement le cadre
-          toggleActions: "play none none reverse"
-        }
-      });
-    });
-  });
-  
-  
-  
+AOS.init({
+    duration: 800,  // Durée de l'animation en ms
+    once: false      // L'animation se déclenche une seule fois
+});
 
 function updateCSS() {
     let largeur = window.innerWidth;

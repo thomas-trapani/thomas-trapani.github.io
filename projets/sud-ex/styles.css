@@ -1,36 +1,84 @@
-  /* =========================================================
+/* =========================================================
      SECTION HERO
-     ========================================================= */
+========================================================= */
+.hero {
+  background: white;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centre le contenu horizontalement */
+  padding: 50px 20px;
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+/* Conteneur pour centrer le contenu et gérer l'espacement */
+.container {
+  max-width: 1200px; /* Largeur maximale du conteneur */
+  margin: 0 auto; /* Centre le conteneur horizontalement */
+  padding-left: 20px; /* Espacement à gauche */
+  padding-right: 20px; /* Espacement à droite */
+}
+
+.logo-and-text {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 500px;
+  height: auto;
+  margin-right: 30px;
+}
+
+.text-content {
+  max-width: 600px;
+}
+
+h1 {
+  color: #008cba;
+  font-size: 28px;
+}
+
+.yellow-line {
+  border: none;
+  border-top: 3px solid #f9c800;
+  width: 50%;
+  margin: 15px 0;
+}
+
+p {
+  color: #333333;
+  line-height: 1.6;
+}
+
+p strong {
+  font-weight: bold;
+}
+
+/* Responsivité */
+@media (max-width: 768px) {
   .hero {
-    background: url('fond.jpg') center center/cover fixed;
-    height: 50vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    margin-top: 150px; /* Compense le header fixe */
+    padding: 20px;
   }
-  
-  /* Overlay sur l'image de fond dans la section Hero */
-  .hero .overlay {
-    background: rgba(0,0,0,0.5);
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    color: #fff;
+
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .logo {
+    width: 300px;
+    margin-bottom: 20px;
+    margin-right: 0;
+  }
+
+  .text-content {
+    max-width: none;
     text-align: center;
   }
-  
-  /* Par défaut, afficher le texte hero pour grand écran et masquer la version mobile */
-  .large-hero {
-    display: block;
-  }
-  .small-hero {
-    display: none;
-  }
+}
+
   
   /* =========================================================
      SECTION SERVICES
