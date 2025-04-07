@@ -32,6 +32,7 @@
 }
 
 .text-content {
+  min-width: 505px;
   max-width: 600px;
 }
 
@@ -311,34 +312,36 @@ p strong {
     #advantages h2 {
       font-size: 40px;
     }
-    /* Affichage du texte hero pour téléphone */
-    .large-hero {
-      display: none;
-    }
-    .small-hero {
-      display: block;
-    }
-    /* Réduction de la taille du texte dans la section .hero */
-    .hero .overlay pre,
-    .hero .overlay pre span {
-      font-size: 30px;
-      margin: 10px 20px;
-    }
+      .logo-and-text {
+        flex-direction: column; /* Empile le logo et le texte verticalement */
+        text-align: center; /* Centre le contenu horizontalement */
+      }
+    
+      .logo {
+        margin-right: 0; /* Supprime la marge à droite du logo */
+        margin-bottom: 20px; /* Ajoute un espace entre le logo et le texte */
+      }
     
     /* Pour le carousel des partenaires : le premier partenaire ne sera plus décalé */
     .carousel-item:first-child {
       margin-left: 0;
     }
-    
-    /* Ajustement de la section Avantages pour mobile :
-       Le carré occupe presque toute la largeur, avec un léger écart */
-    #advantages {
-      padding: 20px 0;
+
+    .map-container {
+      display: flex;
+      flex-direction: column; /* Empile la carte et le formulaire verticalement */
+      align-items: center; /* Centre le contenu horizontalement */
     }
-    #advantages div {
-      width: 90vw;
-      max-width: none;
-      padding: 20px;
-      box-sizing: border-box;
+  
+    .map-container iframe {
+      width: 90%; /* La carte prend toute la largeur disponible */
+      max-width: 90%; /* Assure que la carte ne dépasse pas la largeur */
+      margin-bottom: 20px; /* Ajoute un espace entre la carte et le formulaire */
+    }
+  
+    form {
+      width: 85%;
+      max-width: 90%; /* Le formulaire prend toute la largeur disponible */
+      margin-top: 0; /* Supprime la marge du haut, car l'espace est déjà géré par le margin-bottom de la carte */
     }
   }
