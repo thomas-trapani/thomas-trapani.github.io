@@ -121,12 +121,12 @@
   header .logo {
     text-align: center;
     padding: 10px;
-    margin-bottom: 10px;
+    padding-bottom: 10px;
   }
   header .logo img {
     max-width: 1000px;
-    margin-left: 100px;
-    margin-right: 100px;
+    padding-left: 100px;
+    padding-right: 100px;
     height: auto;
     object-fit: contain;
   }
