@@ -204,6 +204,8 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
+        margin-top: auto; /* Force le footer à rester en bas de la page */
+        padding-bottom: 0 !important;
       }
       footer p{
         color: #fff;
@@ -228,6 +230,8 @@
     /* Optionnel : empêche le débordement horizontal du body */
     body {
         overflow-x: hidden;
+        min-height: 100vh;
+        min-width: 100vh;
       }
     header .logo img {
         height: 40px;
