@@ -92,7 +92,7 @@ p strong {
   /* Chaque carte est un conteneur flex en colonne pour pousser le bouton vers le bas */
   .card {
     background: #fff;
-    width: 80%;
+    width: 20%;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     padding: 20px;
@@ -257,6 +257,13 @@ p strong {
     }
     #petit {
       display: block;
+    }
+    .text-content {
+      min-width: 80%;
+      max-width: 90%;
+    }
+    .card {
+      width: 80%;
     }
     /* Réorganisation des conteneurs de cartes et témoignages */
     .cards-container, .testimonials-container {
