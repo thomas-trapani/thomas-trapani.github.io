@@ -32,8 +32,8 @@
 }
 
 .text-content {
-  min-width: 505px;
-  max-width: 600px;
+  min-width: 50%;
+  max-width: 60%;
 }
 
 h1 {
@@ -69,14 +69,9 @@ p strong {
   }
 
   .logo {
-    width: 300px;
+    width: 80%;
     margin-bottom: 20px;
     margin-right: 0;
-  }
-
-  .text-content {
-    max-width: none;
-    text-align: center;
   }
 }
 
@@ -97,7 +92,7 @@ p strong {
   /* Chaque carte est un conteneur flex en colonne pour pousser le bouton vers le bas */
   .card {
     background: #fff;
-    width: 280px;
+    width: 80%;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     padding: 20px;
@@ -109,7 +104,7 @@ p strong {
   .card img {
     display: block;
     margin: 0 auto 20px auto;
-    max-width: 90%;
+    max-width: 79%;
     height: 80px;
     width: auto;
     object-fit: contain;
@@ -133,7 +128,7 @@ p strong {
   }
   .testimonial-card {
     background: #fff;
-    width: 320px;
+    width: 80%;
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
@@ -156,43 +151,7 @@ p strong {
   .rating {
     color: #FFC107;
   }
-  
-  /* =========================================================
-     SECTION AVANTAGES DE L'EXTERNALISATION
-     ========================================================= */
-  #advantages {
-    padding: 60px 100px;
-    background: url('fond.jpg') center center/cover fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    position: relative;
-    min-height: 100vh;
-  }
-  #advantages div {
-    background-color: #fff;
-    text-align: center;
-    width: 90%;
-    padding: 40px;
-    margin: 0 auto;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
-  }
-  #advantages ul {
-    list-style: disc;
-    margin: 20px auto;
-    max-width: 1000px;
-    text-align: left;
-    padding-left: 40px;
-  }
-  #advantages p,
-  #advantages li {
-    color: #016a87;
-    font-size: large;
-    line-height: 1.6;
-  }
-  
+
   /* =========================================================
      SECTION PARTENAIRES (CAROUSEL)
      ========================================================= */
@@ -243,7 +202,7 @@ p strong {
      ========================================================= */
   form {
     margin: 20px 30px;
-    width: 600px;
+    width: 30%;
     background-color: #ffffff;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);

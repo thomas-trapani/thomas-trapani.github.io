@@ -231,7 +231,7 @@
     body {
         overflow-x: hidden;
         min-height: 100vh;
-        min-width: 100vh;
+        min-width: 100vw;
       }
     header .logo img {
         height: 40px;
@@ -255,13 +255,13 @@
       
       /* Suppréssion du logo dans le menu déroulé */
       nav img {
-        width: 400px;
+        width: 80%;
         display: none;
       }
 
       /* Suppréssion du logo dans le menu déroulé */
       header img {
-        width: 300px;
+        width: 80%;
       }
       
       /* Affichage du hamburger et gestion du menu mobile */
