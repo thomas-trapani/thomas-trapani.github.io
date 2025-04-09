@@ -153,34 +153,81 @@ p strong {
   }
 
   /* =========================================================
-     SECTION PARTENAIRES (CAROUSEL)
+     SECTION Reseaux
      ========================================================= */
-  #partners {
-    padding: 60px 20px;
-  }
-  .carousel {
-    justify-content: center;
-    display: flex;
-    overflow-x: auto;
-    gap: 20px;
-    padding: 20px;
-    scroll-snap-type: x mandatory;
-  }
-  .carousel-item {
-    min-width: 150px;
-    flex-shrink: 0;
-    text-align: center;
-    scroll-snap-align: center;
-  }
-  .carousel-item:first-child {
-    margin-left: 10px;
-  }
+
+     #reseau {
+      display: flex;
+      justify-content: center; /* Centre le contenu horizontalement */
+      align-items: center;     /* Centre le contenu verticalement */
+      position: relative;
+      margin: 10px auto;
+      width: 80%;              /* Ajuste la largeur selon tes besoins */
+      overflow: hidden;
+      }
+    #parte2 {
+      display: none;
+    }
+
+    @media(max-width: 768px) {
+      #reseau {
+        display: none;
+      } 
+      #parte2 {
+        display: flex;
+      }
+    }
+
+  /* =========================================================
+     SECTION CONFIANCE (CAROUSEL)
+     ========================================================= */
+  
+     #partners {
+      padding: 60px 20px;
+      text-align: center;
+      overflow: hidden;
+      width: 80%;
+      margin: 0 auto;
+    }
+    
+    .carousel-wrapper {
+      display: flex;
+      position: relative;
+    }
+    
+    .carousel {
+      display: flex;
+      gap: 40px;
+      animation: scroll-carousel 10s linear infinite;
+    }
+    
+    .carousel-item {
+      flex: 0 0 auto;
+      min-width: 150px;
+      text-align: center;
+    }
+    
+    .carousel-item img {
+      height: 150px;
+      object-fit: contain;
+    }
+    
+    /* Animation de défilement fluide */
+    @keyframes scroll-carousel {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+    
   
   /* =========================================================
      SECTION GOOGLE MAPS
      ========================================================= */
   #map {
-    padding-top: 60px;
+    padding-top: 0px;
     padding-left: 20px;
     text-align: center;
   }
