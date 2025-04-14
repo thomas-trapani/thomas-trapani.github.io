@@ -24,8 +24,9 @@
   }
 
   h1 {
-    font-size: 500px;
+    font-size: 4rem;
   }
+  
   
   /* =========================================
      HEADER avec image brumeuse en fond
@@ -97,14 +98,6 @@
   }
   nav.sticky {
     background: var(--black);
-  }
-  
-  .container-nav {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
   }
 
   .photo-container {
@@ -183,19 +176,228 @@
   /* =========================================
      RESPONSIVE
      ========================================= */
-  @media (max-width: 768px) {
-    .header-content {
-      flex-direction: column;
-      text-align: center;
+     @media (max-width: 768px) {
+      /* NAVIGATION */
+      nav {
+        padding: 0.5rem;
+      }
+    
+      .container-nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    
+      nav ul {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.5rem;
+        padding-left: 0;
+        margin-top: 1rem;
+      }
+    
+      nav ul li {
+        width: 100%;
+      }
+    
+      nav ul li a {
+        display: block;
+        padding: 0.5rem 1rem;
+        width: 100%;
+      }
+    
+      /* HEADER */
+      .header-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 1rem;
+      }
+    
+      .photo-container {
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+    
+      .photo-person {
+        width: 150px;
+        height: 150px;
+      }
+    
+      .overlay-img {
+        width: 100px;
+        right: 32%;
+        transform: translateX(50%);
+        bottom: -5px;
+      }
+    
+      .text-container {
+        width: 100%;
+      }
+    
+      .person-name {
+        font-size: 2.2rem;
+      }
+    
+      .btn-cv {
+        width: 100%;
+        font-size: 1rem;
+      }
+    
+      /* FIL D'ARIANE */
+      .breadcrumb {
+        font-size: 0.8rem;
+        padding: 0.4rem 1rem;
+      }
+    
+      .box {
+        padding: 1rem;
+      }
+    
+      .public {
+        font-size: 1rem;
+        text-align: center;
+      }
     }
-  
-    .photo-person {
-      margin-bottom: 1rem;
+    
+
+    :root {
+      --white: #ffffff;
+      --black: #000000;
+      --yellow-btn: #ffd700;
     }
-  
-    nav ul {
-      flex-direction: column;
-      gap: 1rem;
+    
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
     }
-  }
-  
+    
+    .nav-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      height: 50px;
+    }
+    
+    .hamburger {
+      width: 30px;
+      height: 24px;
+      position: relative;
+      cursor: pointer;
+      display: none;
+    }
+    
+    .hamburger::before,
+    .hamburger::after,
+    .hamburger div {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background-color: var(--white);
+      transition: 0.3s ease-in-out;
+    }
+    
+    .hamburger div {
+      top: 10px;
+    }
+    
+    .hamburger::before {
+      top: 0;
+    }
+    
+    .hamburger::after {
+      bottom: 0;
+    }
+    
+    .hamburger.active::before {
+      transform: rotate(45deg);
+      top: 10px;
+    }
+    
+    .hamburger.active::after {
+      transform: rotate(-45deg);
+      bottom: 10px;
+    }
+    
+    .hamburger.active div {
+      opacity: 0;
+    }
+    
+    /* Nav links */
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+      margin: 0;
+      padding: 1rem 0;
+    }
+    
+    .nav-links li a {
+      text-decoration: none;
+      color: var(--white);
+      transition: color 0.3s;
+    }
+    
+    .nav-links li a:hover {
+      color: var(--yellow-btn);
+    }
+    
+    .container-nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1rem;
+    }
+    
+    .nav-links {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      list-style: none;
+      padding: 1rem 1rem;
+    }
+
+    /* Responsive menu */
+    @media (max-width: 768px) {
+      
+    
+    nav {
+      background-color: var(--black);
+      color: var(--white);
+      padding: 1rem;
+    }
+    
+      .hamburger {
+        display: block;
+      }
+    
+      .nav-links {
+        flex-direction: column;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.4s ease-in-out;
+        padding: 0;
+      }
+    
+      .nav-links.active {
+        max-height: 500px;
+      }
+    
+      .nav-links li {
+        border-top: 1px solid #333;
+      }
+    
+      .nav-links li a {
+        padding: 1rem;
+        display: block;
+      }
+    }
+    
