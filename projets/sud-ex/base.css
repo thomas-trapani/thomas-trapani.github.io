@@ -1,0 +1,306 @@
+/* =========================================================
+   STYLE GÉNÉRAL ET VARIABLES
+   ========================================================= */
+   :root {
+    --bleu: #1D95B6;
+    --jaune: #FFC900;
+  }
+
+  header .logo img {
+    display: none;
+  }
+  
+  /* Règles de base pour tous les éléments */
+  * {
+    font-size: large;
+    transition: all 0.5s ease;
+  }
+  
+  /* Par défaut, tous les span ont cette couleur */
+  span {
+    color: #56d6f9;
+  }
+  
+  /* Configuration globale du body et de la page */
+  body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+  }
+  
+  a {
+    text-decoration: none;
+    color: var(--bleu) ;
+  }
+  
+  /* =========================================================
+     TYPOGRAPHIE
+     ========================================================= */
+  h2 {
+    text-align: center;
+    margin-top: 20px;
+    color: var(--bleu);
+    font-size: 50px;
+    position: relative;
+  }
+  
+  /* Barre décorative sous les h2 */
+  h2::after {
+    content: "";
+    margin-top: 20px;
+    display: block;
+    width: 67%;
+    height: 4px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--jaune);
+  }
+  
+  /* Style pour les balises <pre> utilisées dans la section Hero */
+  pre {
+    text-align: center;
+    margin: 20px 40px 0;
+    color: var(--jaune);
+    font-size: 50px;
+    position: relative;
+  }
+  
+  /* Classe pour un span spécifique dans le <pre> */
+  .sout {
+    font-size: 50px;
+  }
+  
+  /* Bouton principal */
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: var(--jaune);
+    color: #fff;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  .btn:hover {
+    background-color: var(--bleu);
+  }
+  
+  /* =========================================================
+     HEADER & NAVIGATION
+     ========================================================= */
+/* Conteneur pour centrer le menu et gérer l'espacement (Desktop Only) */
+@media (min-width: 769px) {
+  .nav-container {
+    max-width: 1200px; /* Largeur maximale du conteneur */
+    margin: 0 auto; /* Centre le conteneur horizontalement */
+    padding-left: 20px; /* Espacement à gauche */
+    padding-right: 20px; /* Espacement à droite */
+    display: flex; /* Ajout de display: flex pour aligner le contenu */
+    justify-content: center; /* Centre le contenu horizontalement */
+    width: 100%; /* Prend toute la largeur disponible */
+  }
+
+  nav#nav-menu ul {
+    flex: 1; /* Permet au menu de prendre l'espace disponible */
+    justify-content: center; /* Centre les éléments du menu */
+  }
+}
+
+
+  /* Bouton hamburger (affiché uniquement sur petit écran) */
+  .menu-toggle {
+    display: none;
+    cursor: pointer;
+    margin-right: 20px;
+  }
+  
+  .menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: var(--bleu);
+    margin: 5px 0;
+    transition: all 0.3s ease;
+  }
+  
+  /* Navigation en version desktop */
+  nav#nav-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Style du header */
+  header {
+    background-color: #fff;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+
+    border-bottom: 1px solid #ddd;
+  }
+  header .logo {
+    justify-content: center;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    text-align: center;
+    padding: 10px;
+    padding-bottom: 10px;
+  }
+  header img {
+    height: 65px;
+  }
+  
+  /* Liste de navigation */
+  nav ul {
+    font-weight: bold;
+    color: var(--bleu);
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+  }
+  nav a:hover {
+    color: var(--jaune);
+  }
+  nav ul li {
+    position: relative;
+    padding: 15px 20px;
+    cursor: pointer;
+  }
+  
+  /* Sous-menu (Dropdown) */
+  nav ul li ul {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    background-color: #f8f8f8;
+    list-style: none;
+    padding: 10px 0;
+    min-width: 200px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  }
+  nav ul li:hover ul {
+    display: block;
+  }
+  nav ul li ul li {
+    padding: 10px 20px;
+  }
+
+    /* =========================================================
+     FOOTER
+     ========================================================= */
+     footer{
+        background: #333;
+        padding: 10px 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin-top: auto; /* Force le footer à rester en bas de la page */
+        padding-bottom: 0 !important;
+      }
+      .footer-contact{
+        display: flex;
+      }
+      footer p{
+        color: #fff;
+      }
+      footer a{
+        padding-top: 22px;
+        padding-left: 10px;
+        padding-right: 20px;
+      }
+      footer a:hover{
+        color: var(--jaune);
+      }
+      footer div {
+        margin: 10px;
+      }
+      footer .footer-social a img {
+        width: 50px;
+        margin-right: 10px;
+        padding-top: 5px;
+      }
+      footer .footer-copyright{
+        padding-top: 0px;
+      }
+      
+@media(max-width: 768px) {
+    /* Ajustement de la taille des titres */
+    h2 {
+        font-size: 60px;
+      }
+    /* Optionnel : empêche le débordement horizontal du body */
+    body {
+        overflow-x: hidden;
+        min-height: 100vh;
+        min-width: 100vw;
+      }
+    header .logo img {
+        height: 40px;
+      }
+      /* Menu de navigation en mode mobile */
+      nav ul {
+        flex-direction: column;
+      }
+      /* Dropdowns de navigation : conteneur blanc avec padding et ombre */
+      nav ul li ul {
+        background-color: #fff;
+        padding: 10px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        z-index: 1000;
+      }
+    /* Réorganisation du footer */
+    footer {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      /* Suppréssion du logo dans le menu déroulé */
+      nav img {
+        width: 80%;
+        display: none;
+      }
+
+      /* Suppréssion du logo dans le menu déroulé */
+      header img {
+        width: 80%;
+      }
+      
+      /* Affichage du hamburger et gestion du menu mobile */
+      .menu-toggle {
+        padding-left: 10px;
+        display: block;
+        width: 30px;
+      }
+      nav#nav-menu {
+        position: absolute;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        background-color: #fff;
+        transition: left 0.3s ease;
+        z-index: 999;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      nav#nav-menu.show {
+        left: 0;
+      }
+      nav#nav-menu ul {
+        flex-direction: column;
+      }
+      nav#nav-menu ul li {
+        padding: 15px 0;
+        text-align: center;
+      }
+}
