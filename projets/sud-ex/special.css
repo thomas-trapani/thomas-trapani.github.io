@@ -1,0 +1,139 @@
+/* =========================================================
+     SECTION HERO
+========================================================= */
+.hero {
+  background: white;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centre le contenu horizontalement */
+  padding: 50px 20px;
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+/* Conteneur pour centrer le contenu et gérer l'espacement */
+.container {
+  max-width: 1200px; /* Largeur maximale du conteneur */
+  margin: 0 auto; /* Centre le conteneur horizontalement */
+  padding-left: 20px; /* Espacement à gauche */
+  padding-right: 20px; /* Espacement à droite */
+}
+
+.logo-and-text {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 500px;
+  height: auto;
+  margin-right: 30px;
+  margin-left: 30px;
+}
+
+.text-content {
+  min-width: 50%;
+  max-width: 60%;
+  text-align: justify;
+}
+
+h1 {
+  color: #008cba;
+  font-size: 28px;
+}
+
+.yellow-line {
+  border: none;
+  border-top: 3px solid #f9c800;
+  width: 50%;
+  margin: 15px 0;
+}
+
+p {
+  color: #333333;
+  line-height: 1.6;
+}
+
+p strong {
+  font-weight: bold;
+}
+
+/* Responsivité */
+@media (max-width: 768px) {
+  .hero {
+    padding: 20px;
+  }
+
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .logo {
+    width: 80%;
+    margin-bottom: 20px;
+    margin-right: 0;
+  }
+}
+
+  
+  /* =========================================================
+     SECTION SERVICES
+     ========================================================= */
+  #services {
+    padding: 60px 20px;
+    background-color: #f0f0f0;
+  }
+  .cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin: 0 auto;
+    width: 80%;
+  }
+  /* Chaque carte est un conteneur flex en colonne pour pousser le bouton vers le bas */
+  .card {
+    width: 10%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  /* Centre l'image horizontalement et limite sa taille */
+  .card img {
+    display: block;
+    margin: 0 auto 20px auto;
+    max-width: 79%;
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+  }
+  /* Le bouton est poussé en bas */
+  .card .btn {
+    margin-top: auto;
+  }
+  
+  /* =========================================================
+     RÉSPONSIVE (max-width: 768px)
+     ========================================================= */
+  @media(max-width: 768px) {
+    /* Affichage des iframes Google Maps */
+    .text-content {
+      min-width: 80%;
+      max-width: 90%;
+    }
+    .card {
+      width: 80%;
+    }
+      .logo-and-text {
+        flex-direction: column; /* Empile le logo et le texte verticalement */
+        text-align: center; /* Centre le contenu horizontalement */
+      }
+    
+      .logo {
+        margin-right: 0; /* Supprime la marge à droite du logo */
+        margin-bottom: 20px; /* Ajoute un espace entre le logo et le texte */
+      }
+  }

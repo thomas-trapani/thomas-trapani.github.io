@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Page en construction</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+    --bleu: #1D95B6;
+    --jaune: #FFC900;
+  }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Rubik', sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      animation: blink 1.5s infinite;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    a {
+      display: inline-block;
+      text-decoration: none;
+      background-color: var(--bleu);
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    a:hover {
+      background-color: var(--jaune);
+    }
+
+    .illustration {
+      max-width: 400px;
+      margin-bottom: 2rem;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+  </style>
+</head>
+<body>
+
+  <img class="illustration" src="https://maisons-alfort.fr/wp-content/uploads/2019/01/TRAVAUX.jpg" alt="Travaux en cours">
+
+  <h1>🚧 Page en construction 🚧</h1>
+  <p>Oups ! Cette page n'est pas encore prête. Mais pas de panique, ça arrive très bientôt 😉</p>
+  <a href="../">Retour à l'accueil</a>
+
+</body>
+</html>
