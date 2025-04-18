@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SPB Société Phocéenne du Bâtiment</title>
+  <style>
+    /* Reset de base */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; font-family: 'Segoe UI', Roboto, sans-serif; }
+
+    /* Vidéo en arrière-plan foncée */
+    .bg-video {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      filter: brightness(40%);
+      z-index: -2;
+    }
+
+    /* Overlay sombre complémentaire (optionnel) */
+    .bg-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      z-index: -1;
+    }
+
+    /* Barre de navigation */
+    .navbar {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: flex-end;
+      background: transparent;
+      z-index: 10;
+    }
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+    .navbar a {
+      text-decoration: none;
+      color: #ffffff;
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+
+    /* Conteneur principal */
+    .content {
+      position: relative;
+      width: 100%; height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: left;
+      justify-content: center;
+      padding: 0 20px;
+      color: #ffffff;
+    }
+
+    /* Logo */
+    .logo {
+      width: 400px;
+      max-width: 30%;
+      margin-bottom: 20px;
+      margin-left: 200px;
+    }
+
+    /* Barre décorative sous les h2 */
+    .white-line {
+      border: none;
+      border-top: 5px solid white;
+      width: 60%;
+      margin: 15px 0;
+      margin-left: -50px;
+    }
+
+    /* Description */
+    .description {
+      max-width: 600px;
+      font-size: 1.5rem;
+      line-height: 1.5;
+      margin-bottom: 40px;
+      margin-left: 200px;
+    }
+
+    /* "Maison" à droite */
+    .mall {
+      position: absolute;
+      right: 0px;
+      bottom: 0px;
+      width: 1000px;
+      max-width: 20%;
+    }
+
+    @media (max-width: 768px) {
+      .navbar { padding: 10px 20px; }
+      .navbar ul { gap: 15px; }
+      .logo { width: 150px; }
+      .description { font-size: 1rem; }
+      .house { display: none; }
+    }
+
+    main{
+      background-color: #0d0d0d;
+    }
+
+    /* =========================================================
+     SECTION CONFIANCE (CAROUSEL)
+     ========================================================= */
+  
+     #partners {
+      padding: 60px 20px;
+      text-align: center;
+      overflow: hidden;
+      width: 100%;
+      margin: 0 auto;
+    }
+    
+    .carousel-wrapper {
+      display: flex;
+      position: relative;
+    }
+    
+    .carousel {
+      display: flex;
+      gap: 40px;
+      animation: scroll-carousel 10s linear infinite;
+    }
+    
+    .carousel-item {
+      flex: 0 0 auto;
+      min-width: 150px;
+      text-align: center;
+    }
+    
+    .carousel-item img {
+      height: 150px;
+      object-fit: contain;
+    }
+    
+    /* Animation de défilement fluide */
+    @keyframes scroll-carousel {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    h2 {
+      text-align: center;
+      margin-top: 20px;
+      color: white;
+      font-size: 50px;
+      position: relative;
+      padding-bottom: 70px;
+    }
+    
+    /* Barre décorative sous les h2 */
+    h2::after {
+      content: "";
+      margin-top: 20px;
+      display: block;
+      width: 67%;
+      height: 4px;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: white;
+    }
+
+    /* =========================================================
+      SECTION COMPETENCES
+      ========================================================= */
+
+      #compétences {
+        padding: 60px 20px;
+        background-color: #0d0d0d;
+      }
+      .cards-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .card {
+        position: relative;
+        width: 200px;
+        height: 150px;
+        border-radius: 12px;
+        overflow: hidden;
+        color: rgb(255, 255, 255);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-size: cover;
+        background-position: center;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      }
+
+      .card::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5); /* foncé comme intro */
+        z-index: 0;
+      }
+
+      .card img {
+        position: relative;
+        z-index: 1;
+        max-width: 60px;
+        height: auto;
+        margin-bottom: 15px;
+        filter: brightness(1.2);
+      }
+
+      .card h3 {
+        position: relative;
+        z-index: 1;
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+      }
+
+      /* =========================================================
+        SECTION TÉMOIGNAGES CLIENTS
+        ========================================================= */
+      #testimonials {
+        padding: 60px 20px;
+      }
+      .testimonials-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+      .testimonial-card {
+        background: #191919;
+        width: 80%;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        display: flex;
+        gap: 15px;
+        color: #ffffff;
+      }
+      .testimonial-card img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      .testimonial-info {
+        text-align: left;
+        flex: 1;
+      }
+      .testimonial-info h4 {
+        margin: 0;
+      }
+      .rating {
+        color: #FFC107;
+      }
+
+      /* =========================================================
+        SECTION GOOGLE MAPS
+        ========================================================= */
+      #map {
+        padding-top: 0px;
+        padding-left: 20px;
+        text-align: center;
+      }
+      .map-container {
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 80%;
+        margin: 0 auto;
+      }
+      /* Par défaut, l'iframe "petit" est masquée */
+      #petit {
+        display: none;
+      }
+      
+      /* =========================================================
+        SECTION FORMULAIRE DE CONTACT
+        ========================================================= */
+      form {
+        margin: 20px 30px;
+        width: 40%;
+        background-color: #191919;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        border-radius: 8px;
+      }
+      form h2 {
+        margin-top: 0;
+        margin-bottom: 20px;
+        text-align: center;
+        color: white;
+      }
+      form label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: white;
+      }
+      form input[type="text"],
+      form input[type="email"],
+      form textarea {
+        width: 96%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 16px;
+        font-family: inherit;
+      }
+      form textarea {
+        resize: vertical;
+      }
+      form button[type="submit"] {
+        background-color: black;
+        color: #fff;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      form button[type="submit"]:hover {
+        background-color: brown;
+      }
+      /* =========================================================
+     FOOTER
+     ========================================================= */
+     footer{
+        background: #333;
+        padding: 10px 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin-top: auto; /* Force le footer à rester en bas de la page */
+      }
+      footer p{
+        color: #fff;
+      }
+      footer div {
+        margin: 10px;
+      }
+
+  </style>
+</head>
+<body>
+  <!-- Vidéo en arrière-plan -->
+  <video class="bg-video" autoplay muted loop>
+    <source src="video.mp4" type="video/mp4">
+    Votre navigateur ne supporte pas la vidéo.
+  </video>
+  <div class="bg-overlay"></div>
+
+  <!-- Barre de navigation -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="#content">Accueil</a></li>
+      <li><a href="#compétences">Compétences</a></li>
+      <li><a href="portfolio">Portfolio</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Contenu principal -->
+  <div class="content" id="content">
+    <!-- Logo SPB -->
+    <img class="logo" src="spb_logo.png" alt="Logo SPB">
+    <hr class="white-line">
+    <!-- Description -->
+    <p class="description">
+      Votre partenaire de confiance pour tous vos projets industriels et commerciaux. <b>Expertise, qualité et durabilité au cœur de chaque construction.</b>
+    </p>
+
+    <!-- Illustration maison -->
+    <img class="mall" src="mall.png" alt="Illustration de centre commercial">
+  </div>
+  <main>
+    <!-- =========================================================
+        SECTION PARTENAIRES (CAROUSEL)
+    ========================================================= -->
+    <section id="partners" data-aos="fade-up">
+      <div class="carousel-wrapper">
+      <div class="carousel-track" id="carousel-track">
+        <div class="carousel" id="carousel">
+          <div class="carousel-item"><a href="https://www.auchan.fr/" target="_blank"><img src="https://99designs-blog.imgix.net/blog/wp-content/uploads/2022/06/Starbucks_Corporation_Logo_2011.svg-e1657703028844.png?auto=format&q=60&fit=max&w=930" alt="ATEC"></a></div>
+          <div class="carousel-item"><a href="https://www.intermarche.com/" target="_blank"><img src="https://www.creads.com/wp-content/uploads/2021/05/logo-carrefour.png" alt="Bleu Marine Location"></a></div>
+          <div class="carousel-item"><a href="https://www.maison-al.fr/" target="_blank"><img src="https://logodownload.org/wp-content/uploads/2014/09/peugeot-logo-2-1.png" alt="Maison AL"></a></div>
+          <div class="carousel-item"><a href="https://energiesolution.fr/" target="_blank"><img src="https://get-picto.com/wp-content/uploads/2023/02/logo-tiktok.webp" alt="Energie solution"></a></div>
+          <div class="carousel-item"><a href="https://www.facebook.com/Dolcevitabio" target="_blank"><img src="https://www.logo-voiture.com/wp-content/uploads/2023/08/Renault-Logo-2007-1024x576.png" alt="Dolce Vita Bio"></a></div>
+          <div class="carousel-item"><a href="https://www.centaurclinical.com/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/1200px-Google_%22G%22_logo.svg.png" alt="Centaur Clinical"></a></div>
+          <div class="carousel-item"><a href="https://www.facebook.com/bycampusacademyaix/" target="_blank"><img src="https://logos-marques.com/wp-content/uploads/2021/03/Pepsi-Logo.png" alt="Campus academy"></a></div>
+          <div class="carousel-item"><a href="https://www.inhni.com/" target="_blank"><img src="https://gingersauce.co/wp-content/uploads/2020/12/pasted-image-0-2-3-1024x950.png" alt="Inhni"></a></div>
+          <div class="carousel-item"><a href="https://www.jones-and-co.com/" target="_blank"><img src="https://medias.fcacanada.ca//specs/alfaromeo/media/images/badge//current-badge_457d965994803bd415fc9735d023d1eb.png" alt="Jones & CO"></a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+        SECTION SERVICES : 4 CARTES DE SERVICES
+    ========================================================= -->
+    <section id="compétences">
+      <h2>Compétences</h2>
+      <div class="cards-container" data-aos="fade-up">
+        <div class="card" style="background-image: url(https://media.istockphoto.com/id/979340006/fr/photo/ouvrier-mise-en-c%C3%A9ramique-carreaux-de-sol.jpg?s=612x612&w=0&k=20&c=1ZcmuZ1qsUmeJKxBNs5szJnZvlo_Cv8NODSqLHXEYNk=);">
+          <img src="https://local-fr-public.s3.eu-west-3.amazonaws.com/prod/webtool/userfiles/126731/v1.webp" alt="Icone Dev Web">
+          <h3>Carrelage</h3>
+        </div>
+        <div class="card" style="background-image: url('https://www.batirama.com/images/article/60169-Batirama-Illustration-BIM.jpg');">
+          <img src="plan.png" alt="Icone Switching & Routing">
+          <h3>Plans 3D</h3>
+        </div>
+        <div class="card" style="background-image: url('https://media.istockphoto.com/id/1428071835/fr/photo/man-un-technicien-%C3%A9lectricien-travaillant-dans-un-tableau-de-distribution-avec-des-fusibles.jpg?s=612x612&w=0&k=20&c=uPcd7tQpFhqPAwX41b6AADoK6qTfgevdF17h3JQ5lF8=');">
+          <img src="https://cdn-icons-png.flaticon.com/512/4214/4214829.png" alt="Icone Switching & Routing">
+          <h3>Electricité</h3>
+        </div>
+        <div class="card" style="background-image: url('https://img.freepik.com/photos-gratuite/piscine-escalier_1373-90.jpg');">
+          <img src="https://cdn-icons-png.flaticon.com/128/376/376673.png" alt="Icone Switching & Routing">
+          <h3>Piscine</h3>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- =========================================================
+       SECTION TÉMOIGNAGES CLIENTS
+  ========================================================= -->
+  <section id="testimonials" data-aos="fade-up">
+    <h2>Témoignages</h2>
+    <!-- Bouton pour ouvrir la popup -->
+    <div class="testimonials-container">
+      <div class="testimonial-card" data-aos="fade-up">
+        <img src="https://lh3.googleusercontent.com/p/AF1QipN3-AeGgWXI6X31KSUCOHbKALhWG1imsK-RzWlY=w203-h203-k-no" alt="Client 1">
+        <div class="testimonial-info">
+          <h4>Sud Externalisation</h4>
+          <span>15/06/2025</span>
+          <div class="rating">★★★★★</div>
+          <p>Nous tenons à remercier Roger Costa pour la mise en place de la cuisine de l'open space pour tous nos salariés.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       SECTION GOOGLE MAPS
+  ========================================================= -->
+  <section id="map" data-aos="fade-up">
+    <h2>Contact</h2>
+    <div class="map-container">
+      <!-- Deux iframes pour la carte : "petit" et "grand" (affichage responsive via CSS) -->
+      <form action="https://formspree.io/f/moveynqy" method="POST">
+        <label for="name">Nom</label>
+        <input type="text" id="name" name="name"><br><br>
+    
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email"><br><br>
+    
+        <label for="message">Message</label><br>
+        <textarea id="message" name="message" rows="5" cols="30"></textarea><br><br>
+    
+        <button type="submit">Envoyer</button>
+      </form>
+      <iframe class="map-iframe" src="https://maps.google.com/maps?q=IMPASSE FERNAND PISTOR MARSEILLE 13013&amp;t=m&amp;z=11&amp;output=embed&amp;iwloc=near" width="320" height="300" style="border:0;" allowfullscreen="" id="petit" loading="lazy"></iframe>
+      <iframe class="map-iframe" src="https://maps.google.com/maps?q=IMPASSE FERNAND PISTOR MARSEILLE 13013&amp;t=m&amp;z=11&amp;output=embed&amp;iwloc=near" width="600" height="400" style="border:0;" allowfullscreen="" id="grand" loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       FOOTER
+  ========================================================= -->
+  <footer id="contact">
+      <p><strong>Téléphone :</strong> +33 (0)6 13 68 24 53</p>
+      <p>© Copyright 2025 Sud-DSI par Thomas Trapani</p>
+      <p><strong>Email :</strong> roger-costa@gmail.com</p>
+      
+    </div>
+  </footer>
+  </main>
+
+  <!-- Script JS (placeholder) -->
+  <script>
+
+    // =========================
+    // CARROUSEL infini fluide
+    // =========================    
+    (function autoCloneCarousel() {
+      const carousel = document.getElementById("carousel");
+      if (!carousel) return;
+
+      // Nombre d'éléments visibles dans le carrousel
+      const items = Array.from(carousel.children);
+      const totalItems = items.length;
+
+      // On duplique les éléments pour créer l'effet infini
+      items.forEach(item => {
+        const clonedItem = item.cloneNode(true); // Clone chaque élément
+        carousel.appendChild(clonedItem); // Ajoute le clone à la fin
+      });
+
+      // Dupliquer à la bonne échelle si nécessaire
+      let totalCloned = carousel.children.length;
+      let itemsPerView = Math.floor(carousel.offsetWidth / items[0].offsetWidth);
+      let desiredCloneCount = itemsPerView * 2;
+
+      // Si la taille du carrousel change (ou autre paramètre), dupliquer plus ou moins d'éléments
+      while (carousel.children.length < desiredCloneCount) {
+        items.forEach(item => {
+          const clonedItem = item.cloneNode(true);
+          carousel.appendChild(clonedItem);
+        });
+      }
+
+      // Calculer la largeur totale du carrousel pour ajuster l'animation
+      const totalWidth = carousel.scrollWidth;
+
+      // Mettre à jour l'animation pour qu'elle défile sur la largeur totale du carrousel
+      carousel.style.animation = `scroll-carousel ${totalWidth / 200}s linear infinite`;
+    })();
+  </script>
+</body>
+</html>
